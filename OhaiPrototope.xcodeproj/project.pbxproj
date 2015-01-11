@@ -13,6 +13,8 @@
 		8D7E00301A6238A10059EC34 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D7E002F1A6238A10059EC34 /* Images.xcassets */; };
 		8D7E00331A6238A10059EC34 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D7E00311A6238A10059EC34 /* LaunchScreen.xib */; };
 		8D7E003F1A6238A10059EC34 /* OhaiPrototopeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7E003E1A6238A10059EC34 /* OhaiPrototopeTests.swift */; };
+		8D7E00571A623A3C0059EC34 /* Prototope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D7E00501A6239440059EC34 /* Prototope.framework */; };
+		8D7E00581A623A3C0059EC34 /* Prototope.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D7E00501A6239440059EC34 /* Prototope.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,7 +25,49 @@
 			remoteGlobalIDString = 8D7E00221A6238A10059EC34;
 			remoteInfo = OhaiPrototope;
 		};
+		8D7E004F1A6239440059EC34 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D7E00481A6239440059EC34 /* Prototope.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EBE3A75619DF79C400A77736;
+			remoteInfo = Prototope;
+		};
+		8D7E00511A6239440059EC34 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D7E00481A6239440059EC34 /* Prototope.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB306C0919DF77CC00113FA3;
+			remoteInfo = PrototopeTestApp;
+		};
+		8D7E00531A6239440059EC34 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D7E00481A6239440059EC34 /* Prototope.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB1C2A6C19E4D19B000DC2C1;
+			remoteInfo = PrototopeTests;
+		};
+		8D7E00591A623A3C0059EC34 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D7E00481A6239440059EC34 /* Prototope.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EBE3A75519DF79C400A77736;
+			remoteInfo = Prototope;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8D7E005B1A623A3C0059EC34 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8D7E00581A623A3C0059EC34 /* Prototope.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8D7E00231A6238A10059EC34 /* OhaiPrototope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OhaiPrototope.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +80,7 @@
 		8D7E00381A6238A10059EC34 /* OhaiPrototopeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OhaiPrototopeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D7E003D1A6238A10059EC34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D7E003E1A6238A10059EC34 /* OhaiPrototopeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OhaiPrototopeTests.swift; sourceTree = "<group>"; };
+		8D7E00481A6239440059EC34 /* Prototope.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Prototope.xcodeproj; path = prototope/Prototope.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D7E00571A623A3C0059EC34 /* Prototope.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +105,7 @@
 		8D7E001A1A6238A10059EC34 = {
 			isa = PBXGroup;
 			children = (
+				8D7E00481A6239440059EC34 /* Prototope.xcodeproj */,
 				8D7E00251A6238A10059EC34 /* OhaiPrototope */,
 				8D7E003B1A6238A10059EC34 /* OhaiPrototopeTests */,
 				8D7E00241A6238A10059EC34 /* Products */,
@@ -112,6 +159,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		8D7E00491A6239440059EC34 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D7E00501A6239440059EC34 /* Prototope.framework */,
+				8D7E00521A6239440059EC34 /* PrototopeTestApp.app */,
+				8D7E00541A6239440059EC34 /* PrototopeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,10 +179,12 @@
 				8D7E001F1A6238A10059EC34 /* Sources */,
 				8D7E00201A6238A10059EC34 /* Frameworks */,
 				8D7E00211A6238A10059EC34 /* Resources */,
+				8D7E005B1A623A3C0059EC34 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8D7E005A1A623A3C0059EC34 /* PBXTargetDependency */,
 			);
 			name = OhaiPrototope;
 			productName = OhaiPrototope;
@@ -179,6 +238,12 @@
 			mainGroup = 8D7E001A1A6238A10059EC34;
 			productRefGroup = 8D7E00241A6238A10059EC34 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 8D7E00491A6239440059EC34 /* Products */;
+					ProjectRef = 8D7E00481A6239440059EC34 /* Prototope.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8D7E00221A6238A10059EC34 /* OhaiPrototope */,
@@ -186,6 +251,30 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		8D7E00501A6239440059EC34 /* Prototope.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Prototope.framework;
+			remoteRef = 8D7E004F1A6239440059EC34 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8D7E00521A6239440059EC34 /* PrototopeTestApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = PrototopeTestApp.app;
+			remoteRef = 8D7E00511A6239440059EC34 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8D7E00541A6239440059EC34 /* PrototopeTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PrototopeTests.xctest;
+			remoteRef = 8D7E00531A6239440059EC34 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8D7E00211A6238A10059EC34 /* Resources */ = {
@@ -232,6 +321,11 @@
 			isa = PBXTargetDependency;
 			target = 8D7E00221A6238A10059EC34 /* OhaiPrototope */;
 			targetProxy = 8D7E00391A6238A10059EC34 /* PBXContainerItemProxy */;
+		};
+		8D7E005A1A623A3C0059EC34 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Prototope;
+			targetProxy = 8D7E00591A623A3C0059EC34 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -338,8 +432,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/prototope/ThirdParty/**",
+				);
 				INFOPLIST_FILE = OhaiPrototope/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/prototope/ThirdParty/**";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -348,8 +453,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/prototope/ThirdParty/**",
+				);
 				INFOPLIST_FILE = OhaiPrototope/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/prototope/ThirdParty/**";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
