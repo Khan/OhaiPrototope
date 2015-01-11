@@ -11,9 +11,16 @@ import Prototope
 
 class ViewController: UIViewController {
 
+    var mainScene: MainScene!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // set the view controller's view as the Prototope Root View
+        Layer.setRoot(fromView: view)
+        
+        // initialize MainScene.swift
+        mainScene = MainScene()
     }
 
     override func didReceiveMemoryWarning() {

@@ -14,7 +14,8 @@
 		8D7E00331A6238A10059EC34 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D7E00311A6238A10059EC34 /* LaunchScreen.xib */; };
 		8D7E003F1A6238A10059EC34 /* OhaiPrototopeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7E003E1A6238A10059EC34 /* OhaiPrototopeTests.swift */; };
 		8D7E00571A623A3C0059EC34 /* Prototope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D7E00501A6239440059EC34 /* Prototope.framework */; };
-		8D7E00581A623A3C0059EC34 /* Prototope.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D7E00501A6239440059EC34 /* Prototope.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8D7E005D1A623C140059EC34 /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7E005C1A623C140059EC34 /* MainScene.swift */; };
+		8D7E005F1A623F850059EC34 /* Prototope.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D7E00501A6239440059EC34 /* Prototope.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,15 +57,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		8D7E005B1A623A3C0059EC34 /* Embed Frameworks */ = {
+		8D7E005E1A623F700059EC34 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
-			dstSubfolderSpec = 10;
+			dstSubfolderSpec = 7;
 			files = (
-				8D7E00581A623A3C0059EC34 /* Prototope.framework in Embed Frameworks */,
+				8D7E005F1A623F850059EC34 /* Prototope.framework in CopyFiles */,
 			);
-			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -81,6 +81,7 @@
 		8D7E003D1A6238A10059EC34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D7E003E1A6238A10059EC34 /* OhaiPrototopeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OhaiPrototopeTests.swift; sourceTree = "<group>"; };
 		8D7E00481A6239440059EC34 /* Prototope.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Prototope.xcodeproj; path = prototope/Prototope.xcodeproj; sourceTree = "<group>"; };
+		8D7E005C1A623C140059EC34 /* MainScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,11 +125,7 @@
 		8D7E00251A6238A10059EC34 /* OhaiPrototope */ = {
 			isa = PBXGroup;
 			children = (
-				8D7E00281A6238A10059EC34 /* AppDelegate.swift */,
-				8D7E002A1A6238A10059EC34 /* ViewController.swift */,
-				8D7E002C1A6238A10059EC34 /* Main.storyboard */,
-				8D7E002F1A6238A10059EC34 /* Images.xcassets */,
-				8D7E00311A6238A10059EC34 /* LaunchScreen.xib */,
+				8D7E005C1A623C140059EC34 /* MainScene.swift */,
 				8D7E00261A6238A10059EC34 /* Supporting Files */,
 			);
 			path = OhaiPrototope;
@@ -137,6 +134,11 @@
 		8D7E00261A6238A10059EC34 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8D7E00281A6238A10059EC34 /* AppDelegate.swift */,
+				8D7E002A1A6238A10059EC34 /* ViewController.swift */,
+				8D7E002C1A6238A10059EC34 /* Main.storyboard */,
+				8D7E002F1A6238A10059EC34 /* Images.xcassets */,
+				8D7E00311A6238A10059EC34 /* LaunchScreen.xib */,
 				8D7E00271A6238A10059EC34 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -179,7 +181,7 @@
 				8D7E001F1A6238A10059EC34 /* Sources */,
 				8D7E00201A6238A10059EC34 /* Frameworks */,
 				8D7E00211A6238A10059EC34 /* Resources */,
-				8D7E005B1A623A3C0059EC34 /* Embed Frameworks */,
+				8D7E005E1A623F700059EC34 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -301,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D7E005D1A623C140059EC34 /* MainScene.swift in Sources */,
 				8D7E002B1A6238A10059EC34 /* ViewController.swift in Sources */,
 				8D7E00291A6238A10059EC34 /* AppDelegate.swift in Sources */,
 			);
@@ -436,6 +439,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/prototope/Prototope",
 					"$(SRCROOT)/prototope/ThirdParty/**",
 				);
 				INFOPLIST_FILE = OhaiPrototope/Info.plist;
@@ -457,6 +461,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/prototope/Prototope",
 					"$(SRCROOT)/prototope/ThirdParty/**",
 				);
 				INFOPLIST_FILE = OhaiPrototope/Info.plist;
@@ -523,6 +528,7 @@
 				8D7E00441A6238A10059EC34 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8D7E00451A6238A10059EC34 /* Build configuration list for PBXNativeTarget "OhaiPrototopeTests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +537,7 @@
 				8D7E00471A6238A10059EC34 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
