@@ -1,0 +1,3 @@
+[submodule "prototope"]
+	path = prototope
+	url = https://github.com/khan/prototope
