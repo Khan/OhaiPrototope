@@ -23,7 +23,7 @@ class MainScene {
         // return a rounded white square at some x value (defaults to 324)
 
         let tempLayer = Layer(parent: Layer.root)
-        tempLayer.width = 100
+		tunable(100, name: "layer width") { width in tempLayer.width = width }
         tempLayer.height = 100
         tempLayer.backgroundColor = Color(white: 1, alpha: 1)
         tempLayer.cornerRadius = 5
