@@ -16,6 +16,7 @@
 		8D7E00571A623A3C0059EC34 /* Prototope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D7E00501A6239440059EC34 /* Prototope.framework */; };
 		8D7E005D1A623C140059EC34 /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7E005C1A623C140059EC34 /* MainScene.swift */; };
 		8D7E005F1A623F850059EC34 /* Prototope.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 8D7E00501A6239440059EC34 /* Prototope.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EB190C211A66E85C00F970E1 /* TunableValues.json in Resources */ = {isa = PBXBuildFile; fileRef = EB190C201A66E85C00F970E1 /* TunableValues.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		8D7E003E1A6238A10059EC34 /* OhaiPrototopeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OhaiPrototopeTests.swift; sourceTree = "<group>"; };
 		8D7E00481A6239440059EC34 /* Prototope.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Prototope.xcodeproj; path = prototope/Prototope.xcodeproj; sourceTree = "<group>"; };
 		8D7E005C1A623C140059EC34 /* MainScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScene.swift; sourceTree = "<group>"; };
+		EB190C201A66E85C00F970E1 /* TunableValues.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TunableValues.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 			children = (
 				8D7E005C1A623C140059EC34 /* MainScene.swift */,
 				8D7E00261A6238A10059EC34 /* Supporting Files */,
+				EB190C201A66E85C00F970E1 /* TunableValues.json */,
 			);
 			path = OhaiPrototope;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D7E002E1A6238A10059EC34 /* Main.storyboard in Resources */,
+				EB190C211A66E85C00F970E1 /* TunableValues.json in Resources */,
 				8D7E00331A6238A10059EC34 /* LaunchScreen.xib in Resources */,
 				8D7E00301A6238A10059EC34 /* Images.xcassets in Resources */,
 			);
