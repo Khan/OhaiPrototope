@@ -15,7 +15,7 @@
 		8D7E003F1A6238A10059EC34 /* OhaiPrototopeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7E003E1A6238A10059EC34 /* OhaiPrototopeTests.swift */; };
 		8D7E00571A623A3C0059EC34 /* Prototope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D7E00501A6239440059EC34 /* Prototope.framework */; };
 		8D7E005D1A623C140059EC34 /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7E005C1A623C140059EC34 /* MainScene.swift */; };
-		8D7E005F1A623F850059EC34 /* Prototope.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D7E00501A6239440059EC34 /* Prototope.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8D7E005F1A623F850059EC34 /* Prototope.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 8D7E00501A6239440059EC34 /* Prototope.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,14 +57,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		8D7E005E1A623F700059EC34 /* CopyFiles */ = {
+		8D7E005E1A623F700059EC34 /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
-			dstSubfolderSpec = 7;
+			dstSubfolderSpec = 10;
 			files = (
-				8D7E005F1A623F850059EC34 /* Prototope.framework in CopyFiles */,
+				8D7E005F1A623F850059EC34 /* Prototope.framework in Copy Files */,
 			);
+			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -181,7 +182,7 @@
 				8D7E001F1A6238A10059EC34 /* Sources */,
 				8D7E00201A6238A10059EC34 /* Frameworks */,
 				8D7E00211A6238A10059EC34 /* Resources */,
-				8D7E005E1A623F700059EC34 /* CopyFiles */,
+				8D7E005E1A623F700059EC34 /* Copy Files */,
 			);
 			buildRules = (
 			);
