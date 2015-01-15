@@ -1,6 +1,6 @@
 # OHAI Prototope!
 
-A test project for getting started using [prototope](https://github.com/khan/prototope)
+A test project for getting started using [prototope](https://github.com/khan/prototope).
 
 ## getting started
 
