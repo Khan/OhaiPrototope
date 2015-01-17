@@ -11,7 +11,7 @@ import Prototope
 
 class ViewController: UIViewController {
 
-    var mainScene: MainScene!
+    var mainScene: AnyObject! // likely some form of 'scene'
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,8 +19,11 @@ class ViewController: UIViewController {
         // set the view controller's view as the Prototope Root View
         Layer.setRoot(fromView: view)
         
-        // initialize MainScene.swift
-        mainScene = MainScene()
+        // initialize the Touch Events demo
+        mainScene = TouchEvents()
+        
+        // possibly initialize other ones instead
+        // mainScene = Animations()
     }
 
     override func didReceiveMemoryWarning() {

@@ -2,19 +2,19 @@
 //  MainScene.swift
 //  OhaiPrototope
 //
-//  Created by __YOUR_NAME_HERE__ on __DATE__
+//  Modeled after http://framerjs.com/examples/preview/#click-events.framer#code
 //  Copyright (c) 2015 Marcos Ojeda. All rights reserved.
 //
 
 import Prototope
 
-class MainScene {
+class TouchEvents {
 
     var spinnyLayer: Layer!
     var needyLayer: Layer!
 
-    init(){
-        Layer.root.backgroundColor = Color(hue: 0.6, saturation: 0.26, brightness: 0.43)
+    init(){    
+        Layer.root.backgroundColor = Color(hex: 0x535F71)
         makeSpinnyLayer()
         makeNeedyLayer()
     }
