@@ -20,10 +20,10 @@ class ViewController: UIViewController {
         Layer.setRoot(fromView: view)
         
         // initialize the Touch Events demo
-        mainScene = TouchEvents()
+//        mainScene = TouchEvents()
         
         // possibly initialize other ones instead
-        // mainScene = Animations()
+         mainScene = ShadowLightsource()
     }
 
     override func didReceiveMemoryWarning() {
