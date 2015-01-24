@@ -13,13 +13,13 @@ class TouchEvents {
     var spinnyLayer: Layer!
     var needyLayer: Layer!
 
-    init(){    
+    init(){
         Layer.root.backgroundColor = Color(hex: 0x535F71)
         makeSpinnyLayer()
         makeNeedyLayer()
     }
 
-    func gimmeSquare(x:Int? = 324) -> Layer! {
+    func gimmeSquare(x:Int = 324) -> Layer! {
         // return a rounded white square at some x value (defaults to 324)
 
         let tempLayer = Layer(parent: Layer.root)

@@ -53,7 +53,7 @@ class ShadowLightsource {
      * radiusForPoints returns the a scaled cartesian distance between two points
      * @type {[type]}
      */
-    func radiusForPoints(p1: Point, p2: Point, max: Double? = 25) -> Double {
+    func radiusForPoints(p1: Point, p2: Point, max: Double = 25) -> Double {
         let radius: Double = p1.distanceToPoint(p2)
         let maxRadius = sqrt(pow(Layer.root.bounds.size.height / 2, 2) +
             pow(Layer.root.bounds.size.height / 2, 2));
@@ -64,7 +64,7 @@ class ShadowLightsource {
      * gimmeSquare returns a vertically centered rounded white square
      * optionally at some x value
      */
-    func gimmeSquare(x:Int? = 324) -> Layer! {
+    func gimmeSquare(x:Int = 324) -> Layer! {
         let tempLayer = Layer(parent: Layer.root)
         tunable(100, name: "layer width") { width in tempLayer.width = width }
         tempLayer.height = 100
