@@ -17,6 +17,7 @@
 		8D7E005D1A623C140059EC34 /* TouchEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7E005C1A623C140059EC34 /* TouchEvents.swift */; };
 		8D7E005F1A623F850059EC34 /* Prototope.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 8D7E00501A6239440059EC34 /* Prototope.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8DC95FA51A69E05000D18D30 /* ShadowLightsource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC95FA41A69E05000D18D30 /* ShadowLightsource.swift */; };
+		8DEBACDF1A7326C5003CF491 /* TouchAnimators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEBACDE1A7326C5003CF491 /* TouchAnimators.swift */; };
 		EB190C211A66E85C00F970E1 /* TunableValues.json in Resources */ = {isa = PBXBuildFile; fileRef = EB190C201A66E85C00F970E1 /* TunableValues.json */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +87,7 @@
 		8D7E00481A6239440059EC34 /* Prototope.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Prototope.xcodeproj; path = prototope/Prototope.xcodeproj; sourceTree = "<group>"; };
 		8D7E005C1A623C140059EC34 /* TouchEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchEvents.swift; sourceTree = "<group>"; };
 		8DC95FA41A69E05000D18D30 /* ShadowLightsource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowLightsource.swift; sourceTree = "<group>"; };
+		8DEBACDE1A7326C5003CF491 /* TouchAnimators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchAnimators.swift; sourceTree = "<group>"; };
 		EB190C201A66E85C00F970E1 /* TunableValues.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TunableValues.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +132,7 @@
 		8D7E00251A6238A10059EC34 /* OhaiPrototope */ = {
 			isa = PBXGroup;
 			children = (
+				8DEBACDE1A7326C5003CF491 /* TouchAnimators.swift */,
 				8DC95FA41A69E05000D18D30 /* ShadowLightsource.swift */,
 				8D7E005C1A623C140059EC34 /* TouchEvents.swift */,
 				8D7E00261A6238A10059EC34 /* Supporting Files */,
@@ -314,6 +317,7 @@
 				8D7E005D1A623C140059EC34 /* TouchEvents.swift in Sources */,
 				8DC95FA51A69E05000D18D30 /* ShadowLightsource.swift in Sources */,
 				8D7E002B1A6238A10059EC34 /* ViewController.swift in Sources */,
+				8DEBACDF1A7326C5003CF491 /* TouchAnimators.swift in Sources */,
 				8D7E00291A6238A10059EC34 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
