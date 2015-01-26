@@ -27,7 +27,7 @@ class TouchEvents {
         tempLayer.height = 100
         tempLayer.backgroundColor = Color(white: 1, alpha: 1)
         tempLayer.cornerRadius = 5
-        tempLayer.x = Double(x!)
+        tempLayer.x = Double(x)
         tempLayer.y = 512
 
         return tempLayer

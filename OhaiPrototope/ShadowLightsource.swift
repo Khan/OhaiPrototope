@@ -57,7 +57,7 @@ class ShadowLightsource {
         let radius: Double = p1.distanceToPoint(p2)
         let maxRadius = sqrt(pow(Layer.root.bounds.size.height / 2, 2) +
             pow(Layer.root.bounds.size.height / 2, 2));
-        return map(radius, fromInterval:(0, maxRadius), toInterval:(0, max!))
+        return map(radius, fromInterval:(0, maxRadius), toInterval:(0, max))
     }
 
     /**
@@ -70,7 +70,7 @@ class ShadowLightsource {
         tempLayer.height = 100
         tempLayer.backgroundColor = Color(white: 1, alpha: 1)
         tempLayer.cornerRadius = 5
-        tempLayer.x = Double(x!)
+        tempLayer.x = Double(x)
         tempLayer.y = 512
         return tempLayer
     }
