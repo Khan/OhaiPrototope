@@ -17,7 +17,7 @@ struct Scene {
 		Scene(name: "Shadow light source", constructor: { ShadowLightsource() }),
 		Scene(name: "Touch events", constructor: { TouchEvents() }),
 		Scene(name: "Touch unicorns", constructor: { TouchUnicorns() }),
-		Scene(name: "Rotation gesture playpen", constructor: { RotationGesturePlaypen() }),
+		Scene(name: "Scale and rotate", constructor: { ScaleAndRotateGesturePlaypen() }),
 		Scene(name: "Throw cats", constructor: { ThrowCats() }),
 		Scene(name: "Particles", constructor: { TouchParticles() })
 	]

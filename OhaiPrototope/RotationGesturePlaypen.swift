@@ -19,7 +19,7 @@ class RotationGesturePlaypen {
     var needyLayer: Layer!
     
     init(){
-        Layer.root.backgroundColor = Color(hex: 0x535F71)
+        Layer.root.backgroundColor = Color(hex: 0x256ee3)
         makeNeedyLayer()
         
         var initialRotation: Double = 0
@@ -30,6 +30,7 @@ class RotationGesturePlaypen {
             
             if phase == .Began {
                 initialRotation = self.needyLayer.rotationRadians
+                println("started, initial: \(initialRotation)")
             }
             
             self.needyLayer.rotationRadians = initialRotation + rotation
