@@ -14,7 +14,7 @@ class TouchAnimators {
     var needyLayer: Layer!
 
     init(){
-        Layer.root.backgroundColor = Color(hex: 0x535F71)
+        Layer.root.backgroundColor = Color(hex: 0x535F55)
         makeSpinnyLayer()
         makeNeedyLayer()
     }
