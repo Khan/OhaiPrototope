@@ -19,12 +19,8 @@ class ViewController: UIViewController {
         // set the view controller's view as the Prototope Root View
         Layer.setRoot(fromView: view)
 
-        // initialize the Touch Events demo
-//        mainScene = TouchEvents()
-
-        // possibly initialize other ones instead
-        // mainScene = ShadowLightsource()
-        mainScene = TouchAnimators()
+        // initialize the main scene
+        mainScene = MainScene()
     }
 
     override func didReceiveMemoryWarning() {
