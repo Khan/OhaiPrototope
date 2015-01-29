@@ -23,10 +23,13 @@ class RotationGesturePlaypen {
         makeNeedyLayer()
         
         var initialRotation: Double = 0
-        needyLayer.gestures.append(RotationGesture { phase, rotation, velocity, _ in
+        needyLayer.gestures.append(RotationGesture { phase, sequence in
+
+            let rotation = sequence.currentSample.rotationRadians
+            let velocity = sequence.currentSample.velocity
+            
             if phase == .Began {
                 initialRotation = self.needyLayer.rotationRadians
-                println("started, initial: \(initialRotation)")
             }
             
             self.needyLayer.rotationRadians = initialRotation + rotation
