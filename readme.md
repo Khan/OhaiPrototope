@@ -4,11 +4,16 @@ A test project for getting started using [prototope](https://github.com/khan/pro
 
 ## getting started
 
-Once you clone this project, you need to get all the submodules working correctly. To do that, run:
+Make sure to use the recursive option on clone to auto init all submodules. This
+will pull in both prototope and pop (and allow your environment to build).
+
+    $ git clone --recursive https://github.com/khan/ohaiprototope
+
+If you have already cloned the repository (without the recursive option), run
+the following from inside the project directory to do the same.
 
     $ git submodule update --init --recursive
 
-this will pull in both prototope and pop (and allow your environment to build)
 
 ### license
 
