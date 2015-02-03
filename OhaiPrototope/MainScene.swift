@@ -8,80 +8,90 @@
 
 import Prototope
 
-class MainScene {
+class MainScene: NSObject {
     
     var bg: Layer!
     var circle: Layer!
+    var offsetFromCenter: Point!
+    var animator: UIDynamicAnimator
+    var attachment: UIAttachmentBehavior!
     
-    init(){
+    override init() {
+        animator = UIDynamicAnimator()
+        super.init()
+        
         makeBG()
         makeCircle()
-    }
-    
-    func gimmeSquare(x:Int = 324) -> Layer! {
-        // return a rounded white square at some x value (defaults to 324)
-        
-        let tempLayer = Layer(parent: Layer.root)
-        // tunable(100, name: "layer width") { width in tempLayer.width = width }
-        tempLayer.width = 100
-        tempLayer.height = 100
-        tempLayer.backgroundColor = Color(white: 1, alpha: 1)
-        tempLayer.cornerRadius = 5
-        tempLayer.x = Double(x)
-        tempLayer.y = 512
-        
-        return tempLayer
     }
 
     func makeBG() {
         bg = Layer(parent: Layer.root)
         bg.backgroundColor = Color(hex: 0xffffff)
-        bg.frame = Layer.root.bounds
+        bg.frame = Rect(Layer.root.size)
     }
     
     func makeCircle() {
-        let size: Double = 100
-
         circle = Layer(parent: bg)
-        circle.width = size
-        circle.height = size
         circle.backgroundColor = Color(hex: 0xff0088)
-        circle.cornerRadius = 0.5 * size
         circle.x = 0.5 * bg.width
         circle.y = 0.5 * bg.height
-        
-        let updatePosition: Layer.TouchHandler = { centroidSequence in
-            let point: Point = centroidSequence.currentSample.globalLocation
-            self.circle.animators.position.target = point
-            self.circle.animators.position.springBounciness = tunable(2.0, name: "bounciness", max: 20.0)
+        tunable(128, name: "size", min: 44, max: 512) { size in
+            self.circle.width = size
+            self.circle.height = size
+            self.circle.cornerRadius = 0.5 * size
         }
         
-        bg.touchBeganHandler = updatePosition
+//        let updateTargetPosition: Layer.TouchHandler = { centroidSequence in
+//            let point: Point = centroidSequence.currentSample.globalLocation
+//            self.circle.animators.position.target = point
+//            self.circle.animators.position.springSpeed = tunable(20, name: "speed", max: 100)
+//            self.circle.animators.position.springBounciness = tunable(5, name: "bounciness", max: 20)
+//        }
+//
+//        let returnToCenter: Layer.TouchHandler = { _ in
+//            self.circle.animators.position.target = Point(x: 0.5 * self.bg.width, y: 0.5 * self.bg.height)
+//            self.circle.animators.position.springSpeed = tunable(20, name: "speed", max: 100)
+//            self.circle.animators.position.springBounciness = tunable(5, name: "bounciness", max: 20)
+//        }
+//        
+//        bg.touchBeganHandler = updateTargetPosition
+//        bg.touchMovedHandler = updateTargetPosition
+//        bg.touchEndedHandler = returnToCenter
         
-        bg.touchMovedHandler = updatePosition
+//        circle.gestures.append(PanGesture{ phase, centroidSequence in
+//            let currentPoint = centroidSequence.currentSample.globalLocation
+//            self.pinnedPoint = currentPoint
+//            var previousPoint = currentPoint
+//            if let previousSample = centroidSequence.previousSample {
+//                previousPoint = previousSample.globalLocation
+//            }
+//            let velocity = centroidSequence.currentVelocityInLayer(self.bg)
+//            println(velocity)
+//            let centerOfScreen = Point(x: 0.5 * self.bg.width, y: 0.5 * self.bg.height)
+//            
+//            if phase == .Began {
+//                self.circle.animators.position.stop()
+//                self.offsetFromCenter = currentPoint - self.circle.position
+//            } else if phase == .Changed {
+//                self.circle.position += currentPoint - previousPoint
+//            } else if phase == .Ended {
+//                self.circle.animators.position.target = centerOfScreen
+//                self.circle.animators.position.velocity = tunable(1, name: "velocity multiplier", min: 0, max: 20) * velocity
+//                self.circle.animators.position.springSpeed = tunable(20, name: "speed", max: 100)
+//                self.circle.animators.position.springBounciness = tunable(5, name: "bounciness", max: 20)
+//            }
+//        })
         
-        bg.touchEndedHandler = { _ in
-            self.circle.animators.position.target = Point(x: 0.5 * self.bg.width, y: 0.5 * self.bg.height)
-            self.circle.animators.position.springBounciness = 6.0
+        bg.touchBeganHandler = { centroidSequence in
+            let point: CGPoint = CGPoint(centroidSequence.currentSample.globalLocation)
+            self.attachment = UIAttachmentBehavior(item: self.circle, attachedToAnchor: point)
+            self.animator.addBehavior(self.attachment)
+        }
+        
+        bg.touchEndedHandler = { centroidSequence in
+            self.animator.removeBehavior(self.attachment)
+            self.attachment = nil
         }
     }
-    
-//    func makeNeedyLayer(){
-//        // this layer will also rotate 90 degrees to the right and recoil
-//        // from your touch for as long as you press down on it. Letting go
-//        // will return it to its original state
-//        needyLayer = gimmeSquare(x:444)
-//        
-//        // starting to touch it will rotate and scale it
-//        needyLayer.touchBeganHandler = { _ in
-//            self.needyLayer.animators.rotationRadians.target = 1.57
-//            self.needyLayer.animators.rotationRadians.springBounciness = 6.0
-//        }
-//        
-//        // letting go restores the values
-//        needyLayer.touchEndedHandler = { _ in
-//            self.needyLayer.animators.rotationRadians.target = 0
-//        }
-//    }
     
 }
