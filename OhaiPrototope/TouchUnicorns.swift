@@ -29,7 +29,7 @@ class TouchUnicorns {
 
             self.unicornLayer.x = finger.x
             self.unicornLayer.y = finger.y
-
+            self.unicornLayer.zPosition = 1.0
 
         })
        
@@ -86,6 +86,9 @@ class TouchUnicorns {
         
     }
     
+
+
+
 
 
 }
