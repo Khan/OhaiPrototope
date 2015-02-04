@@ -19,7 +19,7 @@ class RotationGesturePlaypen {
     var needyLayer: Layer!
     
     init(){
-        Layer.root.backgroundColor = Color(hex: 0x535F71)
+        Layer.root.backgroundColor = Color(hex: 0x256ee3)
         makeNeedyLayer()
         
         var initialRotation: Double = 0
