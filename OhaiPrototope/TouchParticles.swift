@@ -11,6 +11,7 @@ import Prototope
 class TouchParticles {
 	
 	var cloudLayer: Layer!
+	var rainEmitter: ParticleEmitter!
 	
 	init() {
 		Layer.root.backgroundColor = Color(hex: 0xFFF5D9)
@@ -22,17 +23,25 @@ class TouchParticles {
 	func makeCloudLayer() {
 		self.cloudLayer = Layer(parent: Layer.root, imageName: "cloud")
 		self.cloudLayer.x = 500
-		self.cloudLayer.y = 300
+		self.cloudLayer.y = 100
 		
 		self.cloudLayer.gestures.append(TapGesture (numberOfTouchesRequired: 1, numberOfTapsRequired: 1) { _ in
 			
 			self.makeItRain()
 			
 		})
+		
+		self.cloudLayer.gestures.append(PanGesture { _, centroidSequenc in
+            var finger: Point = centroidSequenc.currentSample.globalLocation
+            self.cloudLayer.x = finger.x
+			self.rainEmitter.x = finger.x
+        })
 	}
 	
 	func makeItRain() {
-		let particle = Particle(image: Image(name: "cloud"))
-self.cloudLayer.emitParticle(particle)
+		let raindrop = Particle(image: Image(name: "drop"), preset: .Rain)
+		self.rainEmitter = ParticleEmitter(particles: [raindrop])
+		self.rainEmitter.position = self.cloudLayer.position
+		Layer.root.addParticleEmitter(self.rainEmitter)
 	}
 }
