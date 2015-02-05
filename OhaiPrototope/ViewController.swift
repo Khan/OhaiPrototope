@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     var sceneNumber = 0
     
     // add any new scenes to this array in order to allow cycling through with double-double taps
-    var sceneArray: [() -> AnyObject] = [ { TouchEvents() }, { ShadowLightsource() }, { TouchAnimators() }, { TouchUnicorns() }, { RotationGesturePlaypen() }]
+    var sceneArray: [() -> AnyObject] = [ { TouchEvents() }, { ShadowLightsource() }, { TouchAnimators() }, { TouchUnicorns() }, { RotationGesturePlaypen() }, { ThrowCats() }]
 
     override func viewDidLoad() {
         super.viewDidLoad()
