@@ -63,7 +63,7 @@ class TouchParticles {
 	
 	func makeItRain() {
 		let raindrop = Particle(imageName: "drop", preset: .Rain)
-		self.rainEmitter = ParticleEmitter(particles: [raindrop])
+		self.rainEmitter = ParticleEmitter(particle: raindrop)
 		Layer.root.addParticleEmitter(self.rainEmitter)
 		
 		// Layer sets these properties automatically, but I want to reset them manually.
@@ -74,12 +74,12 @@ class TouchParticles {
 	
 	func makeItSparkle() {
 		let sparkle = Particle(imageName: "sparkles", preset: .Sparkle)
-		self.sparkleEmitter = ParticleEmitter(particles: [sparkle])
+		self.sparkleEmitter = ParticleEmitter(particle: sparkle)
 		self.sparkleEmitter.shape = kCAEmitterLayerRectangle
 		self.sparkleLayer.addParticleEmitter(self.sparkleEmitter, forDuration: 3)
 		afterDuration(1) {
-self.sparkleEmitter.birthRate = 0
-}
+			self.sparkleEmitter.birthRate = 0
+		}
 		
 	}
 }
