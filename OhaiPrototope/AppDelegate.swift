@@ -12,12 +12,13 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow!
 	var navigationController: UINavigationController!
+	var sceneListingViewController: SceneListingViewController!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 		window = UIWindow(frame: UIScreen.mainScreen().bounds)
 		window.makeKeyAndVisible()
 
-		let sceneListingViewController = SceneListingViewController(
+		sceneListingViewController = SceneListingViewController(
 			scenes: Scene.sceneIndex,
 			sceneActivationHandler: { [unowned self] in self.activateScene($0) }
 		)
@@ -26,22 +27,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		navigationController.interactivePopGestureRecognizer.enabled = false
 		window.rootViewController = navigationController
 
+		let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "handleSwipeBackGesture:")
+		swipeGestureRecognizer.numberOfTouchesRequired = 3
+		swipeGestureRecognizer.direction = .Right
+		window.addGestureRecognizer(swipeGestureRecognizer)
         return true
     }
 
 	private func activateScene(scene: Scene) {
 		let sceneViewController = SceneViewController(scene: scene)
-		sceneViewController.backActionHandler = {
-			self.navigationController.setNavigationBarHidden(false, animated: true)
-			self.navigationController.popViewControllerAnimated(true)
-		}
+		sceneViewController.backActionHandler = { self.navigateToList() }
+
 		navigationController.setNavigationBarHidden(true, animated: true)
 		navigationController.pushViewController(sceneViewController, animated: true)
 
 		if !NSUserDefaults.standardUserDefaults().boolForKey("hasSeenNavigationWarning") {
-			UIAlertView(title: "Navigation Tutorial", message: "Type Escape or press the Volume Up button to navigate back.\n\nYou won't see this message again.", delegate: nil, cancelButtonTitle: "OK").show()
+			UIAlertView(title: "Navigation Tutorial", message: "Type Escape or swipe back with three fingers to navigate back.\n\nYou won't see this message again.", delegate: nil, cancelButtonTitle: "OK").show()
 			NSUserDefaults.standardUserDefaults().setBool(true, forKey:"hasSeenNavigationWarning")
 		}
+	}
+
+	func navigateToList() {
+		self.navigationController.setNavigationBarHidden(false, animated: true)
+		self.navigationController.setViewControllers([sceneListingViewController], animated: true)
+	}
+
+	func handleSwipeBackGesture(gesture: UIGestureRecognizer!) {
+		navigateToList()
 	}
 
 	
