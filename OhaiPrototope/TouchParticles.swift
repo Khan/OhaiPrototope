@@ -76,7 +76,10 @@ class TouchParticles {
 		let sparkle = Particle(imageName: "sparkles", preset: .Sparkle)
 		self.sparkleEmitter = ParticleEmitter(particles: [sparkle])
 		self.sparkleEmitter.shape = kCAEmitterLayerRectangle
-		self.sparkleLayer.addParticleEmitter(self.sparkleEmitter)
+		self.sparkleLayer.addParticleEmitter(self.sparkleEmitter, forDuration: 3)
+		afterDuration(1) {
+self.sparkleEmitter.birthRate = 0
+}
 		
 	}
 }
