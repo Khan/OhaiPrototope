@@ -8,6 +8,7 @@
 
 import Prototope
 
+/** Touch the cloud, make it rain; touch the layer, make it sparkle. */
 class TouchParticles {
 	
 	var cloudLayer: Layer!
@@ -61,7 +62,7 @@ class TouchParticles {
 	}
 	
 	func makeItRain() {
-		let raindrop = Particle(image: Image(name: "drop"), preset: .Rain)
+		let raindrop = Particle(imageName: "drop", preset: .Rain)
 		self.rainEmitter = ParticleEmitter(particles: [raindrop])
 		Layer.root.addParticleEmitter(self.rainEmitter)
 		
@@ -72,7 +73,7 @@ class TouchParticles {
 	
 	
 	func makeItSparkle() {
-		let sparkle = Particle(image: Image(name: "sparkles"), preset: .Sparkle)
+		let sparkle = Particle(imageName: "sparkles", preset: .Sparkle)
 		self.sparkleEmitter = ParticleEmitter(particles: [sparkle])
 		self.sparkleEmitter.shape = kCAEmitterLayerRectangle
 		self.sparkleLayer.addParticleEmitter(self.sparkleEmitter)
