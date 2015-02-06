@@ -20,6 +20,7 @@
 		8D7E005F1A623F850059EC34 /* Prototope.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 8D7E00501A6239440059EC34 /* Prototope.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8DC95FA51A69E05000D18D30 /* ShadowLightsource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC95FA41A69E05000D18D30 /* ShadowLightsource.swift */; };
 		8DEBACDF1A7326C5003CF491 /* TouchAnimators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEBACDE1A7326C5003CF491 /* TouchAnimators.swift */; };
+		CD11D8651A817DDA004F1197 /* TouchParticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD11D8641A817DDA004F1197 /* TouchParticles.swift */; };
 		EB06C1021A853FC50095489F /* SceneListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB06C1011A853FC50095489F /* SceneListingViewController.swift */; };
 		EB06C1041A8540B80095489F /* SceneIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB06C1031A8540B80095489F /* SceneIndex.swift */; };
 		EB190C211A66E85C00F970E1 /* TunableValues.json in Resources */ = {isa = PBXBuildFile; fileRef = EB190C201A66E85C00F970E1 /* TunableValues.json */; };
@@ -94,6 +95,7 @@
 		8D7E005C1A623C140059EC34 /* TouchEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchEvents.swift; sourceTree = "<group>"; };
 		8DC95FA41A69E05000D18D30 /* ShadowLightsource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowLightsource.swift; sourceTree = "<group>"; };
 		8DEBACDE1A7326C5003CF491 /* TouchAnimators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchAnimators.swift; sourceTree = "<group>"; };
+		CD11D8641A817DDA004F1197 /* TouchParticles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchParticles.swift; sourceTree = "<group>"; };
 		EB06C1011A853FC50095489F /* SceneListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneListingViewController.swift; sourceTree = "<group>"; };
 		EB06C1031A8540B80095489F /* SceneIndex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneIndex.swift; sourceTree = "<group>"; };
 		EB06C1081A854ACE0095489F /* OhaiPrototope-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OhaiPrototope-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -141,6 +143,11 @@
 		8D7E00251A6238A10059EC34 /* OhaiPrototope */ = {
 			isa = PBXGroup;
 			children = (
+				8DEBACDE1A7326C5003CF491 /* TouchAnimators.swift */,
+				6972003B1A80A631009AB8D7 /* TouchUnicorns.swift */,
+				8DC95FA41A69E05000D18D30 /* ShadowLightsource.swift */,
+				8D7E005C1A623C140059EC34 /* TouchEvents.swift */,
+				CD11D8641A817DDA004F1197 /* TouchParticles.swift */,
 				EB06C1031A8540B80095489F /* SceneIndex.swift */,
 				EB06C1051A8540C00095489F /* Scenes */,
 				8D7E00261A6238A10059EC34 /* Supporting Files */,
@@ -344,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D7E005D1A623C140059EC34 /* TouchEvents.swift in Sources */,
+				CD11D8651A817DDA004F1197 /* TouchParticles.swift in Sources */,
 				756AEA611A7794280039E8AB /* RotationGesturePlaypen.swift in Sources */,
 				8DC95FA51A69E05000D18D30 /* ShadowLightsource.swift in Sources */,
 				EB06C1021A853FC50095489F /* SceneListingViewController.swift in Sources */,
