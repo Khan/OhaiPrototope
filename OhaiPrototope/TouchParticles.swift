@@ -14,7 +14,7 @@ class TouchParticles {
 	var cloudLayer: Layer!
 	var sparkleLayer: Layer!
 	
-	var rainEmitter: ParticleEmitter!
+	var rainEmitter: ParticleEmitter?
 	var sparkleEmitter: ParticleEmitter!
 	
 	
@@ -32,16 +32,14 @@ class TouchParticles {
 		self.cloudLayer.y = 100
 		
 		self.cloudLayer.gestures.append(TapGesture (numberOfTouchesRequired: 1, numberOfTapsRequired: 1) { _ in
-			
 			self.makeItRain()
-			
-			})
+		})
 		
 		self.cloudLayer.gestures.append(PanGesture { _, centroidSequenc in
 			var finger: Point = centroidSequenc.currentSample.globalLocation
 			self.cloudLayer.x = finger.x
-			self.rainEmitter.x = finger.x
-			})
+			self.rainEmitter?.x = finger.x
+		})
 	}
 	
 	
@@ -55,20 +53,19 @@ class TouchParticles {
 		self.sparkleLayer.backgroundColor = Color(hex: 0x4A4A4A)
 		
 		self.sparkleLayer.gestures.append(TapGesture (numberOfTouchesRequired: 1, numberOfTapsRequired: 1) { _ in
-			
 			self.makeItSparkle()
-			
-			})
+		})
 	}
 	
 	func makeItRain() {
 		let raindrop = Particle(imageName: "drop", preset: .Rain)
-		self.rainEmitter = ParticleEmitter(particle: raindrop)
-		Layer.root.addParticleEmitter(self.rainEmitter)
+		let rainEmitter = ParticleEmitter(particle: raindrop)
+		self.rainEmitter = rainEmitter
+		Layer.root.addParticleEmitter(rainEmitter)
 		
 		// Layer sets these properties automatically, but I want to reset them manually.
-		self.rainEmitter.size = self.cloudLayer.size
-		self.rainEmitter.position = self.cloudLayer.position
+		rainEmitter.size = self.cloudLayer.size
+		rainEmitter.position = self.cloudLayer.position
 	}
 	
 	
