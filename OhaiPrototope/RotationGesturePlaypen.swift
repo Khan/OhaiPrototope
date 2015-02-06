@@ -37,8 +37,8 @@ class RotationGesturePlaypen {
             if phase == .Ended {
                 initialRotation = 0
                 self.needyLayer.animators.rotationRadians.target = 0
-                self.needyLayer.animators.rotationRadians.springBounciness = 10
-                self.needyLayer.animators.rotationRadians.velocity = velocity
+                let animation = SpringAnimation(velocity: velocity, springBounciness: 10)
+                self.needyLayer.animators.rotationRadians.animationKind = animation
             }
             
             })

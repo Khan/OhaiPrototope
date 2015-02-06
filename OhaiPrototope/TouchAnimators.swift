@@ -60,7 +60,7 @@ class TouchAnimators {
         // starting to touch it will rotate and scale it
         needyLayer.touchBeganHandler = { _ in
             self.needyLayer.animators.rotationRadians.target = 1.57
-            self.needyLayer.animators.rotationRadians.springBounciness = 6.0
+            self.needyLayer.animators.rotationRadians.animationKind = SpringAnimation(velocity:0, springBounciness:6.0)
         }
 
         // letting go restores the values
