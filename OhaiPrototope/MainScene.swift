@@ -50,16 +50,19 @@ class DragBehavior: Behavior {
 
     let dynamicLayer: DynamicLayer
     let gravityBehavior: Behavior
+    var dragging: Bool
     
     init(_ layer: DynamicLayer, gravityBehavior: Behavior) {
         self.dynamicLayer = layer
         self.gravityBehavior = gravityBehavior
+        self.dragging = false
         super.init(layer)
 
         self.dynamicLayer.touchBeganHandler = { centroidSequence in
             if self.active {
                 self.gravityBehavior.active = false
                 self.dynamicLayer.stop()
+                self.dragging = true
             }
         }
         
@@ -83,43 +86,53 @@ class DragBehavior: Behavior {
             self.dynamicLayer.applyImpulse(impulse)
 
             self.gravityBehavior.active = true
+            self.dragging = false
         }
     }
 
 }
 
+enum AttractBehaviorState {
+	case Default
+	case Continuous
+	case Impulse
+}
+
 class AttractBehavior: Behavior {
     
     let attractedLayer: DynamicLayer
-    let dragBehavior: Behavior
-    let gravityBehavior: Behavior
+    let dragBehavior: DragBehavior
+    let gravityBehavior: GravityBehavior
+    var state: AttractBehaviorState
     
-    init(_ layer: Layer, attractedLayer: DynamicLayer, dragBehavior: Behavior, gravityBehavior: Behavior) {
+    init(_ layer: Layer, attractedLayer: DynamicLayer, dragBehavior: DragBehavior, gravityBehavior: GravityBehavior) {
         self.attractedLayer = attractedLayer
         self.dragBehavior = dragBehavior
         self.gravityBehavior = gravityBehavior
+        self.state = .Default
         super.init(layer)
         
         self.layer.touchBeganHandler = { centroidSequence in
-            self.dragBehavior.active = false
-            self.gravityBehavior.active = false
-            self.attractedLayer.stop()
+            if self.dragBehavior.dragging {
+                
+            } else {
+                self.state = .Continuous
+                let position = centroidSequence.currentSample.globalLocation
+                self.gravityBehavior.position = position
 
-//            let point: Point = centroidSequence.currentSample.globalLocation
-//            targetLayer.animators.position.target = point
-//            targetLayer.animators.position.springSpeed = tunable(20, name: "speed", max: 100)
-//            targetLayer.animators.position.springBounciness = tunable(5, name: "bounciness", max: 20)
+            }
         }
         self.layer.touchMovedHandler = { centroidSequence in
-//            let targetLayer = self.circleBehavior.targetLayer
-//            let point: Point = centroidSequence.currentSample.globalLocation
-//            targetLayer.animators.position.target = point
-//            targetLayer.animators.position.springSpeed = tunable(20, name: "speed", max: 100)
-//            targetLayer.animators.position.springBounciness = tunable(5, name: "bounciness", max: 20)
+            if self.state == .Continuous {
+                let position = centroidSequence.currentSample.globalLocation
+                self.gravityBehavior.position = position
+            }
         }
         self.layer.touchEndedHandler = { _ in
-            self.gravityBehavior.active = true
-            self.dragBehavior.active = true
+            if self.state == .Continuous {
+                self.state = .Default
+                self.gravityBehavior.position = self.layer.bounds.center
+            }
         }
     }
 }
