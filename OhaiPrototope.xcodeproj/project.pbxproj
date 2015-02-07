@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7802B1EC1A786CC800D50ADB /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7802B1EB1A786CC800D50ADB /* MainScene.swift */; };
+		78A67C7E1A849C28004139A9 /* DynamicLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A67C7D1A849C28004139A9 /* DynamicLayer.swift */; };
 		8D7E00291A6238A10059EC34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7E00281A6238A10059EC34 /* AppDelegate.swift */; };
 		8D7E002B1A6238A10059EC34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7E002A1A6238A10059EC34 /* ViewController.swift */; };
 		8D7E002E1A6238A10059EC34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D7E002C1A6238A10059EC34 /* Main.storyboard */; };
@@ -20,6 +21,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		78A67C831A849C29004139A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D7E00481A6239440059EC34 /* Prototope.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB453D8F1A7AB0B2006F2A72;
+			remoteInfo = PrototopeJSBridge;
+		};
+		78A67C851A849C29004139A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D7E00481A6239440059EC34 /* Prototope.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB453D991A7AB0B2006F2A72;
+			remoteInfo = PrototopeJSBridgeTests;
+		};
 		8D7E00391A6238A10059EC34 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8D7E001B1A6238A10059EC34 /* Project object */;
@@ -73,6 +88,7 @@
 
 /* Begin PBXFileReference section */
 		7802B1EB1A786CC800D50ADB /* MainScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScene.swift; sourceTree = "<group>"; };
+		78A67C7D1A849C28004139A9 /* DynamicLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicLayer.swift; sourceTree = "<group>"; };
 		8D7E00231A6238A10059EC34 /* OhaiPrototope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OhaiPrototope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D7E00271A6238A10059EC34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D7E00281A6238A10059EC34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +144,7 @@
 		8D7E00251A6238A10059EC34 /* OhaiPrototope */ = {
 			isa = PBXGroup;
 			children = (
+				78A67C7D1A849C28004139A9 /* DynamicLayer.swift */,
 				7802B1EB1A786CC800D50ADB /* MainScene.swift */,
 				8D7E00261A6238A10059EC34 /* Supporting Files */,
 				EB190C201A66E85C00F970E1 /* TunableValues.json */,
@@ -171,6 +188,8 @@
 				8D7E00501A6239440059EC34 /* Prototope.framework */,
 				8D7E00521A6239440059EC34 /* PrototopeTestApp.app */,
 				8D7E00541A6239440059EC34 /* PrototopeTests.xctest */,
+				78A67C841A849C29004139A9 /* PrototopeJSBridge.framework */,
+				78A67C861A849C29004139A9 /* PrototopeJSBridgeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -259,6 +278,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		78A67C841A849C29004139A9 /* PrototopeJSBridge.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = PrototopeJSBridge.framework;
+			remoteRef = 78A67C831A849C29004139A9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		78A67C861A849C29004139A9 /* PrototopeJSBridgeTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PrototopeJSBridgeTests.xctest;
+			remoteRef = 78A67C851A849C29004139A9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		8D7E00501A6239440059EC34 /* Prototope.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -311,6 +344,7 @@
 				8D7E002B1A6238A10059EC34 /* ViewController.swift in Sources */,
 				7802B1EC1A786CC800D50ADB /* MainScene.swift in Sources */,
 				8D7E00291A6238A10059EC34 /* AppDelegate.swift in Sources */,
+				78A67C7E1A849C28004139A9 /* DynamicLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
