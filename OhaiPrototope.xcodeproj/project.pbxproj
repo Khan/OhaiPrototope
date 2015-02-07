@@ -62,6 +62,20 @@
 			remoteGlobalIDString = EBE3A75519DF79C400A77736;
 			remoteInfo = Prototope;
 		};
+		EBC00D9B1A859EF4008D4FF5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D7E00481A6239440059EC34 /* Prototope.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB453D8F1A7AB0B2006F2A72;
+			remoteInfo = PrototopeJSBridge;
+		};
+		EBC00D9D1A859EF4008D4FF5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D7E00481A6239440059EC34 /* Prototope.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB453D991A7AB0B2006F2A72;
+			remoteInfo = PrototopeJSBridgeTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -98,7 +112,6 @@
 		CD11D8641A817DDA004F1197 /* TouchParticles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchParticles.swift; sourceTree = "<group>"; };
 		EB06C1011A853FC50095489F /* SceneListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneListingViewController.swift; sourceTree = "<group>"; };
 		EB06C1031A8540B80095489F /* SceneIndex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneIndex.swift; sourceTree = "<group>"; };
-		EB06C1081A854ACE0095489F /* OhaiPrototope-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OhaiPrototope-Bridging-Header.h"; sourceTree = "<group>"; };
 		EB190C201A66E85C00F970E1 /* TunableValues.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TunableValues.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,7 +176,6 @@
 				8D7E002F1A6238A10059EC34 /* Images.xcassets */,
 				8D7E00311A6238A10059EC34 /* LaunchScreen.xib */,
 				8D7E00271A6238A10059EC34 /* Info.plist */,
-				EB06C1081A854ACE0095489F /* OhaiPrototope-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -191,6 +203,8 @@
 				8D7E00501A6239440059EC34 /* Prototope.framework */,
 				8D7E00521A6239440059EC34 /* PrototopeTestApp.app */,
 				8D7E00541A6239440059EC34 /* PrototopeTests.xctest */,
+				EBC00D9C1A859EF4008D4FF5 /* PrototopeJSBridge.framework */,
+				EBC00D9E1A859EF4008D4FF5 /* PrototopeJSBridgeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -198,12 +212,8 @@
 		EB06C1051A8540C00095489F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				8DEBACDE1A7326C5003CF491 /* TouchAnimators.swift */,
 				697200571A8347F0009AB8D7 /* ThrowCats.swift */,
-				6972003B1A80A631009AB8D7 /* TouchUnicorns.swift */,
 				756AEA601A7794280039E8AB /* RotationGesturePlaypen.swift */,
-				8DC95FA41A69E05000D18D30 /* ShadowLightsource.swift */,
-				8D7E005C1A623C140059EC34 /* TouchEvents.swift */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -321,6 +331,20 @@
 			fileType = wrapper.cfbundle;
 			path = PrototopeTests.xctest;
 			remoteRef = 8D7E00531A6239440059EC34 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EBC00D9C1A859EF4008D4FF5 /* PrototopeJSBridge.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = PrototopeJSBridge.framework;
+			remoteRef = EBC00D9B1A859EF4008D4FF5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EBC00D9E1A859EF4008D4FF5 /* PrototopeJSBridgeTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PrototopeJSBridgeTests.xctest;
+			remoteRef = EBC00D9D1A859EF4008D4FF5 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
