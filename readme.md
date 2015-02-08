@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Khan/OhaiPrototope.svg?branch=master)](https://travis-ci.org/Khan/OhaiPrototope)
+
 # OHAI Prototope!
 
 A test project for getting started using [prototope](https://github.com/khan/prototope).
