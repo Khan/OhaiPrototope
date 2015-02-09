@@ -21,11 +21,13 @@ class Behavior {
 class GravityBehavior: Behavior {
     
     let dynamicLayer: DynamicLayer
+    let id: String
     var position: Point
 
-    init(_ layer: DynamicLayer) {
+    init(_ layer: DynamicLayer, id: String, position: Point = Point()) {
         self.dynamicLayer = layer
-        self.position = Point()
+        self.id = id
+        self.position = position
         super.init(layer)
 
         Heartbeat(handler: { heartbeat in
@@ -39,7 +41,9 @@ class GravityBehavior: Behavior {
                 let gravity = g * (targetPosition - position)
                 let friction = -f * self.dynamicLayer.velocity
                 let netForce = gravity + friction
-                self.dynamicLayer.netForce = netForce
+                self.dynamicLayer.applyForce(id, force: netForce)
+            } else {
+                self.dynamicLayer.removeForce(id)
             }
         })
     }
@@ -59,6 +63,8 @@ class DragBehavior: Behavior {
         super.init(layer)
 
         self.dynamicLayer.touchBeganHandler = { centroidSequence in
+            let id = centroidSequence.id
+            println(id)
             if self.active {
                 self.gravityBehavior.active = false
                 self.dynamicLayer.stop()
@@ -92,46 +98,72 @@ class DragBehavior: Behavior {
 
 }
 
-enum AttractBehaviorState {
-	case Default
-	case Continuous
-	case Impulse
-}
-
-class AttractBehavior: Behavior {
+class AttractionBehavior: Behavior {
     
     let attractedLayer: DynamicLayer
-    let dragBehavior: DragBehavior
-    let gravityBehavior: GravityBehavior
-    var state: AttractBehaviorState
+    let ambientGravity: GravityBehavior
+    var dragTouch: UITouchID? // The touch (if any) that's dragging the layer
+    var gravityTouches: [UITouchID: TouchSequence<UITouchID>] // TouchSequence IDs to TouchSequence objects
+    var gravityFields: [UITouchID: GravityBehavior]
     
-    init(_ layer: Layer, attractedLayer: DynamicLayer, dragBehavior: DragBehavior, gravityBehavior: GravityBehavior) {
+    init(_ layer: Layer, attractedLayer: DynamicLayer, ambientGravity: GravityBehavior) {
         self.attractedLayer = attractedLayer
-        self.dragBehavior = dragBehavior
-        self.gravityBehavior = gravityBehavior
-        self.state = .Default
+        self.ambientGravity = ambientGravity
+        self.dragTouch = nil
+        self.gravityTouches = Dictionary()
+        self.gravityFields = Dictionary()
         super.init(layer)
         
         self.layer.touchBeganHandler = { centroidSequence in
-            if self.dragBehavior.dragging {
-                
+            self.ambientGravity.active = false
+            
+            let id = centroidSequence.id
+            let position = centroidSequence.currentSample.locationInLayer(self.layer)
+            println(position)
+            if (attractedLayer.frame.contains(position)) {
+                println("Got it!")
+                self.dragTouch = id
             } else {
-                self.state = .Continuous
-                let position = centroidSequence.currentSample.globalLocation
-                self.gravityBehavior.position = position
-
+                let stringID: String = id.description
+                self.gravityTouches[id] = centroidSequence
+                self.gravityFields[id] = GravityBehavior(self.attractedLayer, id: stringID, position: position)
             }
         }
         self.layer.touchMovedHandler = { centroidSequence in
-            if self.state == .Continuous {
-                let position = centroidSequence.currentSample.globalLocation
-                self.gravityBehavior.position = position
+            let id = centroidSequence.id
+            let position = centroidSequence.currentSample.locationInLayer(self.layer)
+            if self.dragTouch == id {
+                let currentPoint = position
+                var previousPoint = currentPoint
+                if let previousSample = centroidSequence.previousSample {
+                    previousPoint = previousSample.globalLocation
+                }
+                self.attractedLayer.position += currentPoint - previousPoint
+            } else {
+                self.gravityTouches[id] = centroidSequence
+                if let gravity = self.gravityFields[id] {
+                    gravity.position = position
+                    println(position)
+                }
             }
         }
-        self.layer.touchEndedHandler = { _ in
-            if self.state == .Continuous {
-                self.state = .Default
-                self.gravityBehavior.position = self.layer.bounds.center
+        self.layer.touchEndedHandler = { centroidSequence in
+            let id = centroidSequence.id
+            if id == self.dragTouch {
+                var velocity = centroidSequence.currentVelocityInLayer(self.layer)
+                let impulse = 100 * velocity
+                self.attractedLayer.applyImpulse(impulse)
+                
+                self.dragTouch = nil
+            } else {
+                if let gravity = self.gravityFields[id] {
+                    gravity.active = false
+                    self.gravityFields.removeValueForKey(id)
+                }
+                self.gravityTouches.removeValueForKey(id)
+            }
+            if self.gravityTouches.count == 0 {
+                self.ambientGravity.active = true
             }
         }
     }
@@ -141,24 +173,22 @@ class MainScene {
     
     var bg: Layer!
     var circle: DynamicLayer!
+    let ambientGravity: GravityBehavior
+    let attractionBehavior: AttractionBehavior
     
     init() {
-        makeBG()
-        makeCircle()
-        setupBehaviors()
-    }
-
-    func makeBG() {
         bg = Layer(parent: Layer.root)
         bg.backgroundColor = Color(hex: 0xffffff)
         bg.frame = Layer.root.bounds
-    }
-    
-    func makeCircle() {
+        
         circle = DynamicLayer(parent: bg)
         circle.backgroundColor = Color(hex: 0xff0088)
         circle.x = 0.5 * bg.width
         circle.y = 0.5 * bg.height
+
+        self.ambientGravity = GravityBehavior(circle, id: "ambient", position: bg.bounds.center)
+        self.attractionBehavior = AttractionBehavior(bg, attractedLayer: circle, ambientGravity: ambientGravity)
+        
         tunable(100, name: "size", min: 44, max: 512) { size in
             self.circle.width = size
             self.circle.height = size
@@ -166,12 +196,5 @@ class MainScene {
             self.circle.mass = size / 100
             println(self.circle.mass)
         }
-    }
-    
-    func setupBehaviors() {
-        let gravityBehavior = GravityBehavior(circle)
-        gravityBehavior.position = bg.bounds.center
-        let dragBehavior = DragBehavior(circle, gravityBehavior: gravityBehavior)
-        let attractBehavior = AttractBehavior(bg, attractedLayer: circle, dragBehavior: dragBehavior, gravityBehavior: gravityBehavior)
     }
 }

@@ -31,16 +31,24 @@ public class DynamicLayer: Layer {
 
     var mass: Double
     var velocity: Vector
-    var netForce: Vector
+    var forces: [String: Vector]
     var impulse: Vector
 
     var lastTimestamp: Timestamp
     var renderer: Heartbeat?
+
+    var netForce: Vector {
+        var force = Vector()
+        for (key, f) in self.forces {
+            force += f
+        }
+        return force
+    }
     
     override init(parent: Layer? = nil, name: String? = nil) {
         mass = 1
         velocity = Vector()
-        netForce = Vector()
+        forces = Dictionary()
         impulse = Vector()
         lastTimestamp = Timestamp.currentTimestamp
         
@@ -58,15 +66,23 @@ public class DynamicLayer: Layer {
             self.impulse = Vector()
         })
     }
-
+    
+    func stop() {
+        self.impulse = Vector()
+        self.forces.removeAll()
+        self.velocity = Vector()
+    }
+    
     func applyImpulse(impulse: Vector) {
         self.impulse += impulse
     }
     
-    func stop() {
-        self.impulse = Vector()
-        self.netForce = Vector()
-        self.velocity = Vector()
+    func applyForce(id: String, force: Vector) {
+        self.forces[id] = force
+    }
+    
+    func removeForce(id: String) {
+        self.forces.removeValueForKey(id)
     }
 
 }
