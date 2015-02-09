@@ -19,13 +19,13 @@ class ShadowLightsource {
         setupShadowyLayer()
 
         // as you pan around, use the finger's location to set the position of the light
-        Layer.root.gestures.append(PanGesture { phase, centroidSequenc in
+        Layer.root.gestures.append(PanGesture(handler: { phase, centroidSequenc in
             var finger: Point = centroidSequenc.currentSample.globalLocation
             self.boxShadow.radius = self.radiusForPoints(finger, p2: self.box.position)
             self.boxShadow.offset = self.offsetSize(self.box.position, movable: finger)
 
             self.box.shadow = self.boxShadow
-        })
+        }))
     }
 
     /**

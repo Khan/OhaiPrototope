@@ -15,7 +15,7 @@ class SceneListingViewController: UITableViewController, UITableViewDelegate {
 	init(scenes: [Scene], sceneActivationHandler: Scene -> ()) {
 		dataSource = SceneListingDataSource(scenes: scenes)
 		self.sceneActivationHandler = sceneActivationHandler
-		super.init(nibName: nil, bundle: nil)
+		super.init(style: .Plain)
 		tableView.dataSource = dataSource
 		tableView.delegate = self
 		tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Scene")
@@ -30,23 +30,20 @@ class SceneListingViewController: UITableViewController, UITableViewDelegate {
 	}
 }
 
-@objc private class SceneListingDataSource: NSObject, UITableViewDataSource {
+private class SceneListingDataSource: NSObject, UITableViewDataSource {
 	var scenes: [Scene]
 	init(scenes: [Scene]) {
 		self.scenes = scenes
 		super.init()
 	}
-
-	private func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+	@objc private func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return scenes.count
 	}
-
-	private func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+	@objc private func numberOfSectionsInTableView(tableView: UITableView) -> Int {
 		return 1
 	}
-
-	private func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCellWithIdentifier("Scene", forIndexPath: indexPath) as UITableViewCell
+	@objc private func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCellWithIdentifier("Scene", forIndexPath: indexPath) as! UITableViewCell
 		cell.textLabel!.text = scenes[indexPath.row].name
 		return cell
 	}

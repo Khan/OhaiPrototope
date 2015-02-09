@@ -23,7 +23,7 @@ class RotationGesturePlaypen {
         makeNeedyLayer()
         
         var initialRotation: Double = 0
-        needyLayer.gestures.append(RotationGesture { phase, sequence in
+        needyLayer.gestures.append(RotationGesture( handler: { phase, sequence in
 
             let rotation = sequence.currentSample.rotationRadians
             let velocity = sequence.currentSample.velocityRadians
@@ -41,7 +41,7 @@ class RotationGesturePlaypen {
                 self.needyLayer.animators.rotationRadians.velocity = velocity
             }
             
-            })
+            }))
     }
     
     func gimmeSquare(x:Int = 384) -> Layer! {

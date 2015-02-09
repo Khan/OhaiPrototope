@@ -39,15 +39,15 @@ class TouchAnimators {
         spinnyLayer = gimmeSquare()
 
         spinnyLayer.touchBeganHandler = { _ in
-             Layer.animateWithDuration(0.35, curve: .EaseInOut) {
+            Layer.animateWithDuration(0.35, curve: .EaseInOut, animations: {
                  self.spinnyLayer.rotationDegrees = 90
-            }
+            })
         }
 
         spinnyLayer.touchEndedHandler = { _ in
-            Layer.animateWithDuration(0.35, curve: .EaseInOut) {
+            Layer.animateWithDuration(0.35, curve: .EaseInOut, animations: {
                  self.spinnyLayer.rotationDegrees = 0
-            }
+            })
         }
     }
 
