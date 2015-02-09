@@ -19,6 +19,7 @@ struct Scene {
 		Scene(name: "Touch unicorns", constructor: { TouchUnicorns() }),
 		Scene(name: "Rotation gesture playpen", constructor: { RotationGesturePlaypen() }),
 		Scene(name: "Throw cats", constructor: { ThrowCats() }),
-		Scene(name: "Particles", constructor: { TouchParticles() })
+		Scene(name: "Particles", constructor: { TouchParticles() }),
+		Scene(name: "Video", constructor: { VideoScene() })
 	]
 }
