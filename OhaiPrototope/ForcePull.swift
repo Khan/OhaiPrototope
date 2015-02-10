@@ -41,7 +41,7 @@ public class DynamicLayer: Layer {
         return force
     }
     
-    override init(parent: Layer? = nil, name: String? = nil) {
+	init(parent: Layer? = nil, name: String? = nil) {
         mass = 1
         velocity = Vector()
         forces = Dictionary()
