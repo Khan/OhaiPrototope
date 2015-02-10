@@ -35,11 +35,11 @@ class TouchParticles {
 			self.makeItRain()
 		})
 		
-		self.cloudLayer.gestures.append(PanGesture { _, centroidSequenc in
+        self.cloudLayer.gestures.append(PanGesture( handler: { _, centroidSequenc in
 			var finger: Point = centroidSequenc.currentSample.globalLocation
 			self.cloudLayer.x = finger.x
 			self.rainEmitter?.x = finger.x
-		})
+		}))
 	}
 	
 	

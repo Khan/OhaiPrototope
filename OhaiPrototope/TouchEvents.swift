@@ -38,9 +38,9 @@ class TouchEvents {
         spinnyLayer = gimmeSquare()
 
         spinnyLayer.touchBeganHandler = { _ in
-            Layer.animateWithDuration(0.3, curve: .EaseInOut) {
+            Layer.animateWithDuration(0.3, curve: .EaseInOut, animations: {
                 self.spinnyLayer.rotationDegrees += 90
-            }
+            })
         }
     }
 
@@ -52,18 +52,18 @@ class TouchEvents {
 
         // starting to touch it will rotate and scale it
         needyLayer.touchBeganHandler = { _ in
-            Layer.animateWithDuration(0.7, curve: .EaseInOut) {
+            Layer.animateWithDuration(0.7, curve: .EaseInOut, animations: {
                 self.needyLayer.rotationDegrees = 90
                 self.needyLayer.scale = 0.8
-            }
+            })
         }
 
         // letting go restores the values
         needyLayer.touchEndedHandler = { _ in
-            Layer.animateWithDuration(0.5, curve: .EaseInOut) {
+            Layer.animateWithDuration(0.5, curve: .EaseInOut, animations: {
                 self.needyLayer.rotationDegrees = 0
                 self.needyLayer.scale = 1
-            }
+            })
         }
     }
 
