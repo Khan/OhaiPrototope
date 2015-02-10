@@ -12,14 +12,14 @@ class TouchUnicorns {
 
     var touchMeLayer: Layer!
     var unicornLayer: Layer!
-    
+
 
     init(){
         Layer.root.backgroundColor = Color(hex: 0xFF31A0)
         //makeTouchMeLayer()
         makeUnicornLayer()
-        
-        Layer.root.gestures.append(PanGesture { phase, centroidSequenc in
+
+        Layer.root.gestures.append(PanGesture( handler: { phase, centroidSequenc in
             var finger: Point = centroidSequenc.currentSample.globalLocation
 
             for touch in centroidSequenc.samples {
@@ -31,17 +31,17 @@ class TouchUnicorns {
             self.unicornLayer.y = finger.y
             self.unicornLayer.zPosition = 1.0
 
-        })
-       
+        }))
+
     }
-    
+
     func gimmeSparkle(x:Double, y:Double) -> Layer {
         //return a sparkle at the x and y value provided
-        
+
         let sparkleLayer = Layer(parent: Layer.root, imageName: "star")
         sparkleLayer.x = Double(x)
         sparkleLayer.y = Double(y)
-        
+
         return sparkleLayer
 
     }
@@ -66,26 +66,26 @@ class TouchUnicorns {
         touchMeLayer = gimmeSquare()
 
         touchMeLayer.touchBeganHandler = { _ in
-             Layer.animateWithDuration(0.35, curve: .EaseInOut) {
+            Layer.animateWithDuration(0.35, curve: .EaseInOut, animations: {
                  self.touchMeLayer.rotationDegrees = 90
-            }
+            })
         }
 
         touchMeLayer.touchEndedHandler = { _ in
-            Layer.animateWithDuration(0.35, curve: .EaseInOut) {
+            Layer.animateWithDuration(0.35, curve: .EaseInOut, animations: {
                  self.touchMeLayer.rotationDegrees = 0
-            }
+            })
         }
     }
 
     func makeUnicornLayer() {
-        
+
         unicornLayer = Layer(parent: Layer.root, imageName: "unicorn")
         unicornLayer.x = 400
         unicornLayer.y = 512
-        
+
     }
-    
+
 
 
 

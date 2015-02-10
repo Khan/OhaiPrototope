@@ -6,6 +6,8 @@ A test project for getting started using [prototope](https://github.com/khan/pro
 
 ## getting started
 
+**You'll need Xcode 6.3 to run Prototope!**
+
 Make sure to use the recursive option on clone to auto init all submodules. This
 will pull in both prototope and pop (and allow your environment to build).
 
