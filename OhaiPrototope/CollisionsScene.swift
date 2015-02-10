@@ -48,9 +48,9 @@ class CollisionsScene {
     }
     
     func setupCollisions() {
-        when(catLayer).enters(rainbowLayer) {
-            self.makeSparkle(catLayer)
-        }
+        self.catLayer.behaviors = [CollisionBehavior(on: .Entering, rainbowLayer) {
+            self.makeSparkle(self.catLayer)
+        }]
     }
     
     func makeSparkle(layer: Layer) {
