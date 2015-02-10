@@ -115,6 +115,7 @@ class AttractionBehavior: Behavior {
         
         self.layer.touchBeganHandler = { centroidSequence in
             let id = centroidSequence.id
+            println("Touch down \(id)")
             let stringID: String = id.description
             let position = centroidSequence.currentSample.locationInLayer(self.layer)
             
@@ -146,6 +147,7 @@ class AttractionBehavior: Behavior {
         }
         self.layer.touchEndedHandler = { centroidSequence in
             let id = centroidSequence.id
+            println("Touch up \(id)")
             
             if let gravity = self.gravityFields[id] {
                 gravity.active = false
