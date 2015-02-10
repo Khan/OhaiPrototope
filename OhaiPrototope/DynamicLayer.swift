@@ -12,12 +12,8 @@ typealias Vector = Point
 
 extension Vector {
 
-    func magnitude() -> Double {
-        return distanceToPoint(Vector())
-    }
-
     func normalized() -> Vector {
-        let magnitude = self.magnitude()
+        let magnitude = self.length
         if (magnitude != 0) {
             return self / magnitude
         } else {
