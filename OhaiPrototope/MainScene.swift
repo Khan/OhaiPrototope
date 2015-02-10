@@ -50,53 +50,6 @@ class GravityBehavior: Behavior {
 
 }
 
-class DragBehavior: Behavior {
-
-    let dynamicLayer: DynamicLayer
-    let gravityBehavior: Behavior
-    var dragging: Bool
-    
-    init(_ layer: DynamicLayer, gravityBehavior: Behavior) {
-        self.dynamicLayer = layer
-        self.gravityBehavior = gravityBehavior
-        self.dragging = false
-        super.init(layer)
-
-        self.dynamicLayer.touchBeganHandler = { centroidSequence in
-            let id = centroidSequence.id
-            if self.active {
-                self.gravityBehavior.active = false
-                self.dynamicLayer.stop()
-                self.dragging = true
-            }
-        }
-        
-        self.dynamicLayer.touchMovedHandler = { centroidSequence in
-            let currentPoint = centroidSequence.currentSample.globalLocation
-            var previousPoint = currentPoint
-            if let previousSample = centroidSequence.previousSample {
-                previousPoint = previousSample.globalLocation
-            }
-            
-            self.dynamicLayer.position += currentPoint - previousPoint
-        }
-        
-        self.dynamicLayer.touchEndedHandler = { centroidSequence in
-            let p = self.dynamicLayer.parent
-            var velocity = Vector()
-            if let parent = p {
-                velocity = centroidSequence.currentVelocityInLayer(parent)
-            }
-            let impulse = 100 * velocity
-            self.dynamicLayer.applyImpulse(impulse)
-
-            self.gravityBehavior.active = true
-            self.dragging = false
-        }
-    }
-
-}
-
 class AttractionBehavior: Behavior {
     
     let attractedLayer: DynamicLayer
@@ -115,7 +68,6 @@ class AttractionBehavior: Behavior {
         
         self.layer.touchBeganHandler = { centroidSequence in
             let id = centroidSequence.id
-            println("Touch down \(id)")
             let stringID: String = id.description
             let position = centroidSequence.currentSample.locationInLayer(self.layer)
             
@@ -147,7 +99,6 @@ class AttractionBehavior: Behavior {
         }
         self.layer.touchEndedHandler = { centroidSequence in
             let id = centroidSequence.id
-            println("Touch up \(id)")
             
             if let gravity = self.gravityFields[id] {
                 gravity.active = false
