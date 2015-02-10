@@ -64,7 +64,6 @@ class DragBehavior: Behavior {
 
         self.dynamicLayer.touchBeganHandler = { centroidSequence in
             let id = centroidSequence.id
-            println(id)
             if self.active {
                 self.gravityBehavior.active = false
                 self.dynamicLayer.stop()
@@ -103,67 +102,89 @@ class AttractionBehavior: Behavior {
     let attractedLayer: DynamicLayer
     let ambientGravity: GravityBehavior
     var dragTouch: UITouchID? // The touch (if any) that's dragging the layer
-    var gravityTouches: [UITouchID: TouchSequence<UITouchID>] // TouchSequence IDs to TouchSequence objects
+    var touches: [UITouchID: TouchSequence<UITouchID>] // TouchSequence IDs to TouchSequence objects
     var gravityFields: [UITouchID: GravityBehavior]
     
     init(_ layer: Layer, attractedLayer: DynamicLayer, ambientGravity: GravityBehavior) {
         self.attractedLayer = attractedLayer
         self.ambientGravity = ambientGravity
         self.dragTouch = nil
-        self.gravityTouches = Dictionary()
+        self.touches = Dictionary()
         self.gravityFields = Dictionary()
         super.init(layer)
         
         self.layer.touchBeganHandler = { centroidSequence in
-            self.ambientGravity.active = false
-            
             let id = centroidSequence.id
+            let stringID: String = id.description
             let position = centroidSequence.currentSample.locationInLayer(self.layer)
-            println(position)
-            if (attractedLayer.frame.contains(position)) {
-                println("Got it!")
-                self.dragTouch = id
-            } else {
-                let stringID: String = id.description
-                self.gravityTouches[id] = centroidSequence
-                self.gravityFields[id] = GravityBehavior(self.attractedLayer, id: stringID, position: position)
+            
+            self.touches[id] = centroidSequence
+            self.gravityFields[id] = GravityBehavior(self.attractedLayer, id: stringID, position: position)
+            if self.dragTouch == nil {
+                if attractedLayer.frame.contains(position) {
+                    self.dragTouch = id
+                }
             }
+            
+            self.update()
         }
         self.layer.touchMovedHandler = { centroidSequence in
             let id = centroidSequence.id
-            let position = centroidSequence.currentSample.locationInLayer(self.layer)
-            if self.dragTouch == id {
-                let currentPoint = position
+            
+            self.touches[id] = centroidSequence
+            
+            if id == self.dragTouch {
+                let currentPoint = centroidSequence.currentSample.locationInLayer(self.layer)
                 var previousPoint = currentPoint
                 if let previousSample = centroidSequence.previousSample {
                     previousPoint = previousSample.globalLocation
                 }
                 self.attractedLayer.position += currentPoint - previousPoint
-            } else {
-                self.gravityTouches[id] = centroidSequence
-                if let gravity = self.gravityFields[id] {
-                    gravity.position = position
-                    println(position)
-                }
             }
+            
+            self.update()
         }
         self.layer.touchEndedHandler = { centroidSequence in
             let id = centroidSequence.id
+            
+            if let gravity = self.gravityFields[id] {
+                gravity.active = false
+                self.gravityFields.removeValueForKey(id)
+            }
+            self.touches.removeValueForKey(id)
+            
             if id == self.dragTouch {
                 var velocity = centroidSequence.currentVelocityInLayer(self.layer)
-                let impulse = 100 * velocity
-                self.attractedLayer.applyImpulse(impulse)
+                println(velocity.length)
+                self.attractedLayer.velocity = velocity
                 
                 self.dragTouch = nil
-            } else {
-                if let gravity = self.gravityFields[id] {
-                    gravity.active = false
-                    self.gravityFields.removeValueForKey(id)
-                }
-                self.gravityTouches.removeValueForKey(id)
             }
-            if self.gravityTouches.count == 0 {
+            
+            self.update()
+        }
+    }
+    
+    func update() {
+        if let d = self.dragTouch {
+            self.ambientGravity.active = false
+            for (id, touchSequence) in self.touches {
+                if let gravityBehavior = self.gravityFields[id] {
+                    gravityBehavior.active = false
+                }
+            }
+        } else {
+            if self.touches.count == 0 {
                 self.ambientGravity.active = true
+            } else {
+                self.ambientGravity.active = false
+                for (id, touchSequence) in self.touches {
+                    if let gravityBehavior = self.gravityFields[id] {
+                        let position = touchSequence.currentSample.locationInLayer(self.layer)
+                        gravityBehavior.active = true
+                        gravityBehavior.position = position
+                    }
+                }
             }
         }
     }
@@ -194,7 +215,6 @@ class MainScene {
             self.circle.height = size
             self.circle.cornerRadius = 0.5 * size
             self.circle.mass = size / 100
-            println(self.circle.mass)
         }
     }
 }
