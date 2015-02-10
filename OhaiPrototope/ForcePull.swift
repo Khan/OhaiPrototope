@@ -2,12 +2,18 @@
 //  MainScene.swift
 //  OhaiPrototope
 //
+//  Multi-touch demo where each touch creates a gravitational pull. Shows how 
+//  to create a simple physics simulation by using Heartbeat to recalculate
+//  physical properties on every frame. You can also directly drag and throw
+//  the circle.
+//
 //  Created by Nefaur Khandker on 1/27/15.
 //  Copyright (c) 2015 Khan Academy. All rights reserved.
 //
 
 import Prototope
 
+// Add another name for the Point class for the sake of semantics.
 typealias Vector = Point
 
 extension Vector {
@@ -23,23 +29,24 @@ extension Vector {
     
 }
 
+// Same as a layer, but it now has mass, velocity, etc.
 public class DynamicLayer: Layer {
     
     var mass: Double
     var velocity: Vector
-    var forces: [String: Vector]
-    var impulse: Vector
-    
-    var lastTimestamp: Timestamp
-    var renderer: Heartbeat?
-    
-    var netForce: Vector {
+    var forces: [String: Vector] // The forces that will be applied to this object on every frame
+    var netForce: Vector { // Read-only. Computed from "forces".
         var force = Vector()
         for (key, f) in self.forces {
             force += f
         }
         return force
     }
+    
+    // Bookkeeping
+    private var lastTimestamp: Timestamp
+    private var renderer: Heartbeat?
+    private var impulse: Vector // The force that will be applied to this object on just the next frame
     
 	init(parent: Layer? = nil, name: String? = nil) {
         mass = 1
@@ -69,10 +76,6 @@ public class DynamicLayer: Layer {
         self.velocity = Vector()
     }
     
-    func applyImpulse(impulse: Vector) {
-        self.impulse += impulse
-    }
-    
     func applyForce(id: String, force: Vector) {
         self.forces[id] = force
     }
@@ -81,8 +84,13 @@ public class DynamicLayer: Layer {
         self.forces.removeValueForKey(id)
     }
     
+    func applyImpulse(impulse: Vector) {
+        self.impulse += impulse
+    }
+    
 }
 
+// Generic behavior class applied to a layer that can be turned on/off
 class Behavior {
     let layer: Layer
     var active: Bool
@@ -93,6 +101,7 @@ class Behavior {
     }
 }
 
+// Gravity + friction (OK, I probably should've separated these two out)
 class GravityBehavior: Behavior {
     
     let dynamicLayer: DynamicLayer
@@ -162,6 +171,7 @@ class AttractionBehavior: Behavior {
             self.touches[id] = centroidSequence
             
             if id == self.dragTouch {
+                // Repositions instead of applying a force (since we're dragging)
                 let currentPoint = centroidSequence.currentSample.locationInLayer(self.layer)
                 var previousPoint = currentPoint
                 if let previousSample = centroidSequence.previousSample {
@@ -182,8 +192,8 @@ class AttractionBehavior: Behavior {
             self.touches.removeValueForKey(id)
             
             if id == self.dragTouch {
+                // Throws by applying an initial velocity
                 var velocity = centroidSequence.currentVelocityInLayer(self.layer)
-                println(velocity.length)
                 self.attractedLayer.velocity = velocity
                 
                 self.dragTouch = nil
@@ -193,6 +203,7 @@ class AttractionBehavior: Behavior {
         }
     }
     
+    // Updates the forces that are applied based on which touches are where
     func update() {
         if let d = self.dragTouch {
             self.ambientGravity.active = false
