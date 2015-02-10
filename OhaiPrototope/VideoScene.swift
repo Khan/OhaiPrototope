@@ -10,7 +10,7 @@ import Prototope
 
 /** Plays a great video. */
 class VideoScene {
-	let video: Video
+	let video: Video!
 	let videoLayer: VideoLayer
 	
 	init() {
