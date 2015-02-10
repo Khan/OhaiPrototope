@@ -10,6 +10,7 @@
 		6972003C1A80A631009AB8D7 /* TouchUnicorns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6972003B1A80A631009AB8D7 /* TouchUnicorns.swift */; };
 		697200581A8347F0009AB8D7 /* ThrowCats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697200571A8347F0009AB8D7 /* ThrowCats.swift */; };
 		756AEA611A7794280039E8AB /* RotationGesturePlaypen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756AEA601A7794280039E8AB /* RotationGesturePlaypen.swift */; };
+		7843BABC1A89A0EF00DC203F /* ForcePull.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7843BABB1A89A0EF00DC203F /* ForcePull.swift */; };
 		8D7E00291A6238A10059EC34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7E00281A6238A10059EC34 /* AppDelegate.swift */; };
 		8D7E002B1A6238A10059EC34 /* SceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7E002A1A6238A10059EC34 /* SceneViewController.swift */; };
 		8D7E00301A6238A10059EC34 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D7E002F1A6238A10059EC34 /* Images.xcassets */; };
@@ -96,6 +97,7 @@
 		6972003B1A80A631009AB8D7 /* TouchUnicorns.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchUnicorns.swift; sourceTree = "<group>"; };
 		697200571A8347F0009AB8D7 /* ThrowCats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThrowCats.swift; sourceTree = "<group>"; };
 		756AEA601A7794280039E8AB /* RotationGesturePlaypen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotationGesturePlaypen.swift; sourceTree = "<group>"; };
+		7843BABB1A89A0EF00DC203F /* ForcePull.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForcePull.swift; sourceTree = "<group>"; };
 		8D7E00231A6238A10059EC34 /* OhaiPrototope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OhaiPrototope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D7E00271A6238A10059EC34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D7E00281A6238A10059EC34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -156,12 +158,13 @@
 		8D7E00251A6238A10059EC34 /* OhaiPrototope */ = {
 			isa = PBXGroup;
 			children = (
+				EB06C1031A8540B80095489F /* SceneIndex.swift */,
 				8DEBACDE1A7326C5003CF491 /* TouchAnimators.swift */,
 				6972003B1A80A631009AB8D7 /* TouchUnicorns.swift */,
 				8DC95FA41A69E05000D18D30 /* ShadowLightsource.swift */,
 				8D7E005C1A623C140059EC34 /* TouchEvents.swift */,
 				CD11D8641A817DDA004F1197 /* TouchParticles.swift */,
-				EB06C1031A8540B80095489F /* SceneIndex.swift */,
+				7843BABB1A89A0EF00DC203F /* ForcePull.swift */,
 				EB06C1051A8540C00095489F /* Scenes */,
 				8D7E00261A6238A10059EC34 /* Supporting Files */,
 				EB190C201A66E85C00F970E1 /* TunableValues.json */,
@@ -383,6 +386,7 @@
 				EB06C1041A8540B80095489F /* SceneIndex.swift in Sources */,
 				8D7E002B1A6238A10059EC34 /* SceneViewController.swift in Sources */,
 				8DEBACDF1A7326C5003CF491 /* TouchAnimators.swift in Sources */,
+				7843BABC1A89A0EF00DC203F /* ForcePull.swift in Sources */,
 				6972003C1A80A631009AB8D7 /* TouchUnicorns.swift in Sources */,
 				8D7E00291A6238A10059EC34 /* AppDelegate.swift in Sources */,
 			);
