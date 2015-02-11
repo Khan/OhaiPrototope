@@ -21,6 +21,7 @@ struct Scene {
 		Scene(name: "Throw cats", constructor: { ThrowCats() }),
 		Scene(name: "Particles", constructor: { TouchParticles() }),
 		Scene(name: "Video", constructor: { VideoScene() }),
-		Scene(name: "Force pull", constructor: { ForcePull() })
+		Scene(name: "Force pull", constructor: { ForcePull() }),
+		Scene(name: "Scrolls", constructor: { ScrollScene() })
 	]
 }

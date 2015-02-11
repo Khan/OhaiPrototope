@@ -18,6 +18,7 @@ class SceneViewController: UIViewController {
 		Layer.setRoot(fromView: view)
 
 		mainScene = scene.constructor()
+		self.automaticallyAdjustsScrollViewInsets = false
 	}
 
 	required init(coder aDecoder: NSCoder) {
