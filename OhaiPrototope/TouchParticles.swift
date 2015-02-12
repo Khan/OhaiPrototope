@@ -77,6 +77,5 @@ class TouchParticles {
 		afterDuration(1) {
 			self.sparkleEmitter.birthRate = 0
 		}
-		
 	}
 }
