@@ -21,6 +21,7 @@
 		8D7E005F1A623F850059EC34 /* Prototope.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 8D7E00501A6239440059EC34 /* Prototope.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8DC95FA51A69E05000D18D30 /* ShadowLightsource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC95FA41A69E05000D18D30 /* ShadowLightsource.swift */; };
 		8DEBACDF1A7326C5003CF491 /* TouchAnimators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEBACDE1A7326C5003CF491 /* TouchAnimators.swift */; };
+		9632F6511A8D4C6A003D386B /* ScrollScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9632F6501A8D4C6A003D386B /* ScrollScene.swift */; };
 		969933171A893E0F0036684E /* VideoScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969933161A893E0F0036684E /* VideoScene.swift */; };
 		969933201A895F3E0036684E /* jeff.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9699331F1A895E980036684E /* jeff.mp4 */; };
 		CD11D8651A817DDA004F1197 /* TouchParticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD11D8641A817DDA004F1197 /* TouchParticles.swift */; };
@@ -64,6 +65,34 @@
 			proxyType = 1;
 			remoteGlobalIDString = EBE3A75519DF79C400A77736;
 			remoteInfo = Prototope;
+		};
+		9632F65A1A8D4C6A003D386B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D7E00481A6239440059EC34 /* Prototope.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB6BFB801A857326002B4E6A;
+			remoteInfo = Protocaster;
+		};
+		9632F65C1A8D4C6A003D386B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D7E00481A6239440059EC34 /* Prototope.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB6BFB911A857326002B4E6A;
+			remoteInfo = ProtocasterTests;
+		};
+		9632F65E1A8D4C6A003D386B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D7E00481A6239440059EC34 /* Prototope.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB6BFBB51A857920002B4E6A;
+			remoteInfo = Protoscope;
+		};
+		9632F6601A8D4C6A003D386B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D7E00481A6239440059EC34 /* Prototope.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB6BFBC91A857921002B4E6A;
+			remoteInfo = ProtoscopeTests;
 		};
 		EBC00D9B1A859EF4008D4FF5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -113,6 +142,7 @@
 		8D7E005C1A623C140059EC34 /* TouchEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchEvents.swift; sourceTree = "<group>"; };
 		8DC95FA41A69E05000D18D30 /* ShadowLightsource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowLightsource.swift; sourceTree = "<group>"; };
 		8DEBACDE1A7326C5003CF491 /* TouchAnimators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchAnimators.swift; sourceTree = "<group>"; };
+		9632F6501A8D4C6A003D386B /* ScrollScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollScene.swift; sourceTree = "<group>"; };
 		969933161A893E0F0036684E /* VideoScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoScene.swift; sourceTree = "<group>"; };
 		9699331F1A895E980036684E /* jeff.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = jeff.mp4; sourceTree = "<group>"; };
 		CD11D8641A817DDA004F1197 /* TouchParticles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchParticles.swift; sourceTree = "<group>"; };
@@ -162,7 +192,6 @@
 		8D7E00251A6238A10059EC34 /* OhaiPrototope */ = {
 			isa = PBXGroup;
 			children = (
-				EB06C1031A8540B80095489F /* SceneIndex.swift */,
 				8DEBACDE1A7326C5003CF491 /* TouchAnimators.swift */,
 				6972003B1A80A631009AB8D7 /* TouchUnicorns.swift */,
 				8DC95FA41A69E05000D18D30 /* ShadowLightsource.swift */,
@@ -214,6 +243,10 @@
 				8D7E00541A6239440059EC34 /* PrototopeTests.xctest */,
 				EBC00D9C1A859EF4008D4FF5 /* PrototopeJSBridge.framework */,
 				EBC00D9E1A859EF4008D4FF5 /* PrototopeJSBridgeTests.xctest */,
+				9632F65B1A8D4C6A003D386B /* Protocaster.app */,
+				9632F65D1A8D4C6A003D386B /* ProtocasterTests.xctest */,
+				9632F65F1A8D4C6A003D386B /* Protoscope.app */,
+				9632F6611A8D4C6A003D386B /* ProtoscopeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -221,10 +254,10 @@
 		EB06C1051A8540C00095489F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				CD11D8641A817DDA004F1197 /* TouchParticles.swift */,
 				697200571A8347F0009AB8D7 /* ThrowCats.swift */,
 				756AEA601A7794280039E8AB /* RotationGesturePlaypen.swift */,
 				969933161A893E0F0036684E /* VideoScene.swift */,
+				9632F6501A8D4C6A003D386B /* ScrollScene.swift */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -344,6 +377,34 @@
 			remoteRef = 8D7E00531A6239440059EC34 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		9632F65B1A8D4C6A003D386B /* Protocaster.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Protocaster.app;
+			remoteRef = 9632F65A1A8D4C6A003D386B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9632F65D1A8D4C6A003D386B /* ProtocasterTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ProtocasterTests.xctest;
+			remoteRef = 9632F65C1A8D4C6A003D386B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9632F65F1A8D4C6A003D386B /* Protoscope.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Protoscope.app;
+			remoteRef = 9632F65E1A8D4C6A003D386B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9632F6611A8D4C6A003D386B /* ProtoscopeTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ProtoscopeTests.xctest;
+			remoteRef = 9632F6601A8D4C6A003D386B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		EBC00D9C1A859EF4008D4FF5 /* PrototopeJSBridge.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -399,6 +460,7 @@
 				7843BABC1A89A0EF00DC203F /* ForcePull.swift in Sources */,
 				6972003C1A80A631009AB8D7 /* TouchUnicorns.swift in Sources */,
 				8D7E00291A6238A10059EC34 /* AppDelegate.swift in Sources */,
+				9632F6511A8D4C6A003D386B /* ScrollScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
