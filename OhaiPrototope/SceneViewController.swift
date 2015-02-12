@@ -15,7 +15,7 @@ class SceneViewController: UIViewController {
 	init(scene: Scene) {
 		super.init(nibName: nil, bundle: nil)
 		// set the view controller's view as the Prototope Root View
-		Layer.setRoot(fromView: view)
+		Environment.currentEnvironment = Environment.defaultEnvironmentWithRootView(self.view)
 
 		mainScene = scene.constructor()
 	}
