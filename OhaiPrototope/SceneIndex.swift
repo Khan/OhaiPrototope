@@ -22,6 +22,7 @@ struct Scene {
 		Scene(name: "Particles", constructor: { TouchParticles() }),
 		Scene(name: "Video", constructor: { VideoScene() }),
 		Scene(name: "Force pull", constructor: { ForcePull() }),
-		Scene(name: "Scrolly", constructor: { ScrollScene() })
+		Scene(name: "Scrolly", constructor: { ScrollScene() }),
+		Scene(name: "Layout", constructor: { LayoutScene() })
 	]
 }

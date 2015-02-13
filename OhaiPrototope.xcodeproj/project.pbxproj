@@ -21,6 +21,7 @@
 		8D7E005F1A623F850059EC34 /* Prototope.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 8D7E00501A6239440059EC34 /* Prototope.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8DC95FA51A69E05000D18D30 /* ShadowLightsource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC95FA41A69E05000D18D30 /* ShadowLightsource.swift */; };
 		8DEBACDF1A7326C5003CF491 /* TouchAnimators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEBACDE1A7326C5003CF491 /* TouchAnimators.swift */; };
+		9619D3AE1A8E57780022DC54 /* LayoutScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9619D3AD1A8E57780022DC54 /* LayoutScene.swift */; };
 		9632F6511A8D4C6A003D386B /* ScrollScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9632F6501A8D4C6A003D386B /* ScrollScene.swift */; };
 		969933171A893E0F0036684E /* VideoScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969933161A893E0F0036684E /* VideoScene.swift */; };
 		969933201A895F3E0036684E /* jeff.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9699331F1A895E980036684E /* jeff.mp4 */; };
@@ -142,6 +143,7 @@
 		8D7E005C1A623C140059EC34 /* TouchEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchEvents.swift; sourceTree = "<group>"; };
 		8DC95FA41A69E05000D18D30 /* ShadowLightsource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowLightsource.swift; sourceTree = "<group>"; };
 		8DEBACDE1A7326C5003CF491 /* TouchAnimators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchAnimators.swift; sourceTree = "<group>"; };
+		9619D3AD1A8E57780022DC54 /* LayoutScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutScene.swift; sourceTree = "<group>"; };
 		9632F6501A8D4C6A003D386B /* ScrollScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollScene.swift; sourceTree = "<group>"; };
 		969933161A893E0F0036684E /* VideoScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoScene.swift; sourceTree = "<group>"; };
 		9699331F1A895E980036684E /* jeff.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = jeff.mp4; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 				756AEA601A7794280039E8AB /* RotationGesturePlaypen.swift */,
 				969933161A893E0F0036684E /* VideoScene.swift */,
 				9632F6501A8D4C6A003D386B /* ScrollScene.swift */,
+				9619D3AD1A8E57780022DC54 /* LayoutScene.swift */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				7843BABC1A89A0EF00DC203F /* ForcePull.swift in Sources */,
 				6972003C1A80A631009AB8D7 /* TouchUnicorns.swift in Sources */,
 				8D7E00291A6238A10059EC34 /* AppDelegate.swift in Sources */,
+				9619D3AE1A8E57780022DC54 /* LayoutScene.swift in Sources */,
 				9632F6511A8D4C6A003D386B /* ScrollScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
