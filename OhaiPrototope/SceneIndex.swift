@@ -23,6 +23,7 @@ struct Scene {
 		Scene(name: "Video", constructor: { VideoScene() }),
 		Scene(name: "Force pull", constructor: { ForcePull() }),
 		Scene(name: "Scrolly", constructor: { ScrollScene() }),
-		Scene(name: "Layout", constructor: { LayoutScene() })
+		Scene(name: "Layout", constructor: { LayoutScene() }),
+		Scene(name: "Speechy", constructor: { SpeechyScene() })
 	]
 }
