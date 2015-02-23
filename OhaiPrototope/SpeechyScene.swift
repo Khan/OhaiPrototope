@@ -21,8 +21,8 @@ class SpeechyScene {
 			let textLayer = TextLayer(parent: Layer.root, name: "\(index)")
 			textLayer.text = "\(index)"
 			textLayer.fontSize = 40
-			textLayer.frameMinX = 30
-			textLayer.frameMinY = lastY
+			textLayer.originX = 30
+			textLayer.originY = lastY
 			lastY = textLayer.frameMaxY + 40
 			
 			textLayer.gestures.append(TapGesture (numberOfTouchesRequired: 1, numberOfTapsRequired: 1) { _ in

@@ -26,7 +26,7 @@ class LayoutScene {
 			if let previousLayer = lastLayer {
 				layer.moveBelowSiblingLayer(previousLayer, margin: 20)
 			} else {
-				layer.frameMinY = 40
+				layer.originY = 40
 			}
 			layer.moveToHorizontalCenterOfParentLayer()
 			
