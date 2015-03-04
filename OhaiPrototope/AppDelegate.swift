@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		navigationController.pushViewController(sceneViewController, animated: true)
 
 		if !NSUserDefaults.standardUserDefaults().boolForKey("hasSeenNavigationWarning") {
-			UIAlertView(title: "Navigation Tutorial", message: "Type Escape or swipe back with three fingers to navigate back.\n\nYou won't see this message again.", delegate: nil, cancelButtonTitle: "OK").show()
+			UIAlertView(title: "Navigation Tutorial", message: "Press the 'escape' key or swipe back with three fingers to navigate back.\n\nYou won't see this message again.", delegate: nil, cancelButtonTitle: "OK").show()
 			NSUserDefaults.standardUserDefaults().setBool(true, forKey:"hasSeenNavigationWarning")
 		}
 	}
