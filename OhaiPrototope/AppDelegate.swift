@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UIGestureRecognizerDelegate {
     var window: UIWindow!
 	var navigationController: UINavigationController!
 	var sceneListingViewController: SceneListingViewController!
@@ -30,9 +30,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "handleSwipeBackGesture:")
 		swipeGestureRecognizer.numberOfTouchesRequired = 3
 		swipeGestureRecognizer.direction = .Right
+		swipeGestureRecognizer.delegate = self
 		window.addGestureRecognizer(swipeGestureRecognizer)
         return true
     }
+
+	@objc internal func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+		return true
+	}
 
 	private func activateScene(scene: Scene) {
 		let sceneViewController = SceneViewController(scene: scene)
