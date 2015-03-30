@@ -18,11 +18,11 @@ class ShapeScene {
 	init() {
 		Layer.root.backgroundColor = Color(hex: 0xFFF5D9)
 		
-		self.rectLayer = ShapeLayer(rectangle: Rect(x: 5, y: 25, width: 40, height: 50))
-		self.roundRectLayer = ShapeLayer(rectangle: Rect(x: 5, y: 95, width: 40, height: 20), cornerRadius: 5)
-		self.ovalLayer = ShapeLayer(ovalInRectangle: Rect(x: 5, y: 190, width: 40, height: 30))
+		self.rectLayer = ShapeLayer(path: Path(rectangle: Rect(x: 5, y: 25, width: 40, height: 50)))
+		self.roundRectLayer = ShapeLayer(path: Path(rectangle: Rect(x: 5, y: 95, width: 40, height: 20), cornerRadius: 5))
+		self.ovalLayer = ShapeLayer(path: Path(ovalInRectangle: Rect(x: 5, y: 190, width: 40, height: 30)))
 		
-		self.lineLayer = ShapeLayer(lineFromFirstPoint: Point(x: 100, y: 30), toSecondPoint: Point(x: 200, y: 300))
+		self.lineLayer = ShapeLayer(path: Path(lineFromFirstPoint: Point(x: 100, y: 30), toSecondPoint: Point(x: 200, y: 300)))
 		
 		self.rectLayer.backgroundColor = Color.lightGray
 		self.roundRectLayer.backgroundColor = Color.lightGray
