@@ -27,6 +27,7 @@
 		969933171A893E0F0036684E /* VideoScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969933161A893E0F0036684E /* VideoScene.swift */; };
 		969933201A895F3E0036684E /* jeff.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9699331F1A895E980036684E /* jeff.mp4 */; };
 		CD11D8651A817DDA004F1197 /* TouchParticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD11D8641A817DDA004F1197 /* TouchParticles.swift */; };
+		CD4C5E2A1AC5BC64002288EB /* ShapeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4C5E291AC5BC64002288EB /* ShapeScene.swift */; };
 		EB06C1021A853FC50095489F /* SceneListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB06C1011A853FC50095489F /* SceneListingViewController.swift */; };
 		EB06C1041A8540B80095489F /* SceneIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB06C1031A8540B80095489F /* SceneIndex.swift */; };
 		EB190C211A66E85C00F970E1 /* TunableValues.json in Resources */ = {isa = PBXBuildFile; fileRef = EB190C201A66E85C00F970E1 /* TunableValues.json */; };
@@ -150,6 +151,7 @@
 		969933161A893E0F0036684E /* VideoScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoScene.swift; sourceTree = "<group>"; };
 		9699331F1A895E980036684E /* jeff.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = jeff.mp4; sourceTree = "<group>"; };
 		CD11D8641A817DDA004F1197 /* TouchParticles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchParticles.swift; sourceTree = "<group>"; };
+		CD4C5E291AC5BC64002288EB /* ShapeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeScene.swift; sourceTree = "<group>"; };
 		EB06C1011A853FC50095489F /* SceneListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneListingViewController.swift; sourceTree = "<group>"; };
 		EB06C1031A8540B80095489F /* SceneIndex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneIndex.swift; sourceTree = "<group>"; };
 		EB190C201A66E85C00F970E1 /* TunableValues.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TunableValues.json; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				9632F6501A8D4C6A003D386B /* ScrollScene.swift */,
 				9619D3AD1A8E57780022DC54 /* LayoutScene.swift */,
 				961AC1FB1A93B99A00ED9744 /* SpeechyScene.swift */,
+				CD4C5E291AC5BC64002288EB /* ShapeScene.swift */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				6972003C1A80A631009AB8D7 /* TouchUnicorns.swift in Sources */,
 				961AC1FC1A93B99A00ED9744 /* SpeechyScene.swift in Sources */,
 				8D7E00291A6238A10059EC34 /* AppDelegate.swift in Sources */,
+				CD4C5E2A1AC5BC64002288EB /* ShapeScene.swift in Sources */,
 				9619D3AE1A8E57780022DC54 /* LayoutScene.swift in Sources */,
 				9632F6511A8D4C6A003D386B /* ScrollScene.swift in Sources */,
 			);
