@@ -14,6 +14,7 @@ class ShapeScene {
 	let roundRectLayer: ShapeLayer
 	let ovalLayer: ShapeLayer
 	let lineLayer: ShapeLayer
+	let pathLayer: ShapeLayer
 	
 	init() {
 		Layer.root.backgroundColor = Color(hex: 0xFFF5D9)
@@ -24,9 +25,28 @@ class ShapeScene {
 		
 		self.lineLayer = ShapeLayer(path: Path(lineFromFirstPoint: Point(x: 100, y: 30), toSecondPoint: Point(x: 200, y: 300)))
 		
+		let path = Path()
+//		path.addPoint(Point())
+		path.addPoint(Point(x: 40, y: 90))
+		path.addPoint(Point(x: 90, y: 40))
+		path.addPoint(Point(x: 140, y: 90))
+//		path.closed = true
+		
+
+		
+		self.pathLayer = ShapeLayer(path: path)
+		self.pathLayer.strokeColor = Color.red
+		self.pathLayer.fillColor = nil
+		self.pathLayer.strokeWidth = 10
+		self.pathLayer.capStyle = .Round
+		self.pathLayer.lineJoinStyle = .Round
+		
+		self.pathLayer.moveToCenterOfParentLayer()
+		
 		self.rectLayer.backgroundColor = Color.lightGray
 		self.roundRectLayer.backgroundColor = Color.lightGray
 		self.ovalLayer.backgroundColor = Color.lightGray
 		self.lineLayer.backgroundColor = Color.lightGray
+		self.pathLayer.backgroundColor = Color.lightGray
 	}
 }
