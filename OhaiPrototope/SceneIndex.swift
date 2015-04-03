@@ -24,6 +24,7 @@ struct Scene {
 		Scene(name: "Force pull", constructor: { ForcePull() }),
 		Scene(name: "Scrolly", constructor: { ScrollScene() }),
 		Scene(name: "Layout", constructor: { LayoutScene() }),
-		Scene(name: "Speechy", constructor: { SpeechyScene() })
+		Scene(name: "Speechy", constructor: { SpeechyScene() }),
+		Scene(name: "Shapes", constructor: { ShapeScene() })
 	]
 }
