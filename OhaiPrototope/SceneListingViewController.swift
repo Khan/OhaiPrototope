@@ -10,12 +10,12 @@ import UIKit
 
 class SceneListingViewController: UITableViewController, UITableViewDelegate {
 	private let dataSource: SceneListingDataSource
-	private let sceneActivationHandler: Scene -> ()
+	private var sceneActivationHandler: Scene -> ()
 
 	init(scenes: [Scene], sceneActivationHandler: Scene -> ()) {
 		dataSource = SceneListingDataSource(scenes: scenes)
 		self.sceneActivationHandler = sceneActivationHandler
-		super.init(style: .Plain)
+		super.init(nibName: nil, bundle: nil)
 		tableView.dataSource = dataSource
 		tableView.delegate = self
 		tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Scene")

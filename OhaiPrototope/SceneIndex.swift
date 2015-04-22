@@ -25,6 +25,7 @@ struct Scene {
 		Scene(name: "Scrolly", constructor: { ScrollScene() }),
 		Scene(name: "Layout", constructor: { LayoutScene() }),
 		Scene(name: "Speechy", constructor: { SpeechyScene() }),
+		Scene(name: "Tree Maker", constructor: { TreeMaker() })
 		Scene(name: "Shapes", constructor: { ShapeScene() })
 	]
 }
