@@ -30,7 +30,6 @@
 		96A192791B531BAB00D73B07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A192781B531BAB00D73B07 /* ViewController.swift */; };
 		96A1927B1B531BAB00D73B07 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96A1927A1B531BAB00D73B07 /* Images.xcassets */; };
 		96A1927E1B531BAC00D73B07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96A1927C1B531BAC00D73B07 /* Main.storyboard */; };
-		96A1928A1B531BAC00D73B07 /* OhaiPrototopeOSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A192891B531BAC00D73B07 /* OhaiPrototopeOSXTests.swift */; };
 		CD11D8651A817DDA004F1197 /* TouchParticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD11D8641A817DDA004F1197 /* TouchParticles.swift */; };
 		CD4C5E2A1AC5BC64002288EB /* ShapeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4C5E291AC5BC64002288EB /* ShapeScene.swift */; };
 		EB06C1021A853FC50095489F /* SceneListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB06C1011A853FC50095489F /* SceneListingViewController.swift */; };
@@ -102,13 +101,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = EB6BFBC91A857921002B4E6A;
 			remoteInfo = ProtoscopeTests;
-		};
-		96A192841B531BAC00D73B07 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8D7E001B1A6238A10059EC34 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 96A192711B531BAB00D73B07;
-			remoteInfo = OhaiPrototopeOSX;
 		};
 		96A192991B531BAC00D73B07 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -183,9 +175,6 @@
 		96A192781B531BAB00D73B07 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		96A1927A1B531BAB00D73B07 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		96A1927D1B531BAC00D73B07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		96A192831B531BAC00D73B07 /* OhaiPrototopeOSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OhaiPrototopeOSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		96A192881B531BAC00D73B07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		96A192891B531BAC00D73B07 /* OhaiPrototopeOSXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OhaiPrototopeOSXTests.swift; sourceTree = "<group>"; };
 		CD11D8641A817DDA004F1197 /* TouchParticles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchParticles.swift; sourceTree = "<group>"; };
 		CD4C5E291AC5BC64002288EB /* ShapeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeScene.swift; sourceTree = "<group>"; };
 		EB06C1011A853FC50095489F /* SceneListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneListingViewController.swift; sourceTree = "<group>"; };
@@ -217,13 +206,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		96A192801B531BAC00D73B07 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -234,7 +216,6 @@
 				8D7E00251A6238A10059EC34 /* OhaiPrototope */,
 				8D7E003B1A6238A10059EC34 /* OhaiPrototopeTests */,
 				96A192731B531BAB00D73B07 /* OhaiPrototopeOSX */,
-				96A192861B531BAC00D73B07 /* OhaiPrototopeOSXTests */,
 				8D7E00241A6238A10059EC34 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -245,7 +226,6 @@
 				8D7E00231A6238A10059EC34 /* OhaiPrototope.app */,
 				8D7E00381A6238A10059EC34 /* OhaiPrototopeTests.xctest */,
 				96A192721B531BAB00D73B07 /* OhaiPrototopeOSX.app */,
-				96A192831B531BAC00D73B07 /* OhaiPrototopeOSXTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -334,23 +314,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		96A192861B531BAC00D73B07 /* OhaiPrototopeOSXTests */ = {
-			isa = PBXGroup;
-			children = (
-				96A192891B531BAC00D73B07 /* OhaiPrototopeOSXTests.swift */,
-				96A192871B531BAC00D73B07 /* Supporting Files */,
-			);
-			path = OhaiPrototopeOSXTests;
-			sourceTree = "<group>";
-		};
-		96A192871B531BAC00D73B07 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				96A192881B531BAC00D73B07 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		EB06C1051A8540C00095489F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -433,24 +396,6 @@
 			productReference = 96A192721B531BAB00D73B07 /* OhaiPrototopeOSX.app */;
 			productType = "com.apple.product-type.application";
 		};
-		96A192821B531BAC00D73B07 /* OhaiPrototopeOSXTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 96A1929E1B531BAC00D73B07 /* Build configuration list for PBXNativeTarget "OhaiPrototopeOSXTests" */;
-			buildPhases = (
-				96A1927F1B531BAC00D73B07 /* Sources */,
-				96A192801B531BAC00D73B07 /* Frameworks */,
-				96A192811B531BAC00D73B07 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				96A192851B531BAC00D73B07 /* PBXTargetDependency */,
-			);
-			name = OhaiPrototopeOSXTests;
-			productName = OhaiPrototopeOSXTests;
-			productReference = 96A192831B531BAC00D73B07 /* OhaiPrototopeOSXTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -470,10 +415,6 @@
 					};
 					96A192711B531BAB00D73B07 = {
 						CreatedOnToolsVersion = 6.4;
-					};
-					96A192821B531BAC00D73B07 = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = 96A192711B531BAB00D73B07;
 					};
 				};
 			};
@@ -499,7 +440,6 @@
 				8D7E00221A6238A10059EC34 /* OhaiPrototope */,
 				8D7E00371A6238A10059EC34 /* OhaiPrototopeTests */,
 				96A192711B531BAB00D73B07 /* OhaiPrototopeOSX */,
-				96A192821B531BAC00D73B07 /* OhaiPrototopeOSXTests */,
 			);
 		};
 /* End PBXProject section */
@@ -612,13 +552,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		96A192811B531BAC00D73B07 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -664,14 +597,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		96A1927F1B531BAC00D73B07 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				96A1928A1B531BAC00D73B07 /* OhaiPrototopeOSXTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -684,11 +609,6 @@
 			isa = PBXTargetDependency;
 			name = Prototope;
 			targetProxy = 8D7E00591A623A3C0059EC34 /* PBXContainerItemProxy */;
-		};
-		96A192851B531BAC00D73B07 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 96A192711B531BAB00D73B07 /* OhaiPrototopeOSX */;
-			targetProxy = 96A192841B531BAC00D73B07 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -915,51 +835,6 @@
 			};
 			name = Release;
 		};
-		96A1928D1B531BAC00D73B07 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = OhaiPrototopeOSXTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OhaiPrototopeOSX.app/Contents/MacOS/OhaiPrototopeOSX";
-			};
-			name = Debug;
-		};
-		96A1928E1B531BAC00D73B07 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = OhaiPrototopeOSXTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OhaiPrototopeOSX.app/Contents/MacOS/OhaiPrototopeOSX";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -995,14 +870,6 @@
 			buildConfigurations = (
 				96A1928B1B531BAC00D73B07 /* Debug */,
 				96A1928C1B531BAC00D73B07 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		96A1929E1B531BAC00D73B07 /* Build configuration list for PBXNativeTarget "OhaiPrototopeOSXTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				96A1928D1B531BAC00D73B07 /* Debug */,
-				96A1928E1B531BAC00D73B07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
