@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import PrototopeOSX
 
 class ViewController: NSViewController {
 
@@ -14,6 +15,7 @@ class ViewController: NSViewController {
 		super.viewDidLoad()
 
 		// Do any additional setup after loading the view.
+		Speech.say("oh hi", rate: 200)
 	}
 
 	override var representedObject: AnyObject? {
