@@ -30,6 +30,8 @@
 		96A192791B531BAB00D73B07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A192781B531BAB00D73B07 /* ViewController.swift */; };
 		96A1927B1B531BAB00D73B07 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96A1927A1B531BAB00D73B07 /* Images.xcassets */; };
 		96A1927E1B531BAC00D73B07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96A1927C1B531BAC00D73B07 /* Main.storyboard */; };
+		96A1929F1B531BED00D73B07 /* PrototopeOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A1929A1B531BAC00D73B07 /* PrototopeOSX.framework */; };
+		96A192A01B531BED00D73B07 /* PrototopeOSX.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 96A1929A1B531BAC00D73B07 /* PrototopeOSX.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CD11D8651A817DDA004F1197 /* TouchParticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD11D8641A817DDA004F1197 /* TouchParticles.swift */; };
 		CD4C5E2A1AC5BC64002288EB /* ShapeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4C5E291AC5BC64002288EB /* ShapeScene.swift */; };
 		EB06C1021A853FC50095489F /* SceneListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB06C1011A853FC50095489F /* SceneListingViewController.swift */; };
@@ -116,6 +118,13 @@
 			remoteGlobalIDString = 96A1923D1B531B3300D73B07;
 			remoteInfo = PrototopeOSXTests;
 		};
+		96A192A11B531BED00D73B07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D7E00481A6239440059EC34 /* Prototope.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 96A192321B531B3200D73B07;
+			remoteInfo = PrototopeOSX;
+		};
 		EBC00D9B1A859EF4008D4FF5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8D7E00481A6239440059EC34 /* Prototope.xcodeproj */;
@@ -142,6 +151,17 @@
 				8D7E005F1A623F850059EC34 /* Prototope.framework in Copy Files */,
 			);
 			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96A192A31B531BED00D73B07 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				96A192A01B531BED00D73B07 /* PrototopeOSX.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -203,6 +223,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96A1929F1B531BED00D73B07 /* PrototopeOSX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,10 +407,12 @@
 				96A1926E1B531BAB00D73B07 /* Sources */,
 				96A1926F1B531BAB00D73B07 /* Frameworks */,
 				96A192701B531BAB00D73B07 /* Resources */,
+				96A192A31B531BED00D73B07 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				96A192A21B531BED00D73B07 /* PBXTargetDependency */,
 			);
 			name = OhaiPrototopeOSX;
 			productName = OhaiPrototopeOSX;
@@ -609,6 +632,11 @@
 			isa = PBXTargetDependency;
 			name = Prototope;
 			targetProxy = 8D7E00591A623A3C0059EC34 /* PBXContainerItemProxy */;
+		};
+		96A192A21B531BED00D73B07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PrototopeOSX;
+			targetProxy = 96A192A11B531BED00D73B07 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -872,6 +900,7 @@
 				96A1928C1B531BAC00D73B07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
