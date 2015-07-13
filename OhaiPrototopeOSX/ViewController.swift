@@ -13,6 +13,7 @@ class ViewController: NSViewController {
 	
 	var environment: Environment!
 	var layer: Layer!
+	var protoroLayer: Layer!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -24,9 +25,12 @@ class ViewController: NSViewController {
 		Environment.currentEnvironment = self.environment
 		
 		self.layer = Layer(parent: nil, name: "My layer", viewClass: nil)
-		self.layer.size = Size(width: 200, height: 250)
+		self.layer.size = Size(width: 200, height: 200)
 		self.layer.backgroundColor = Color.purple
 		self.layer.border = Border(color: Color.orange, width: 5)
+		
+		self.protoroLayer = Layer(parent: nil, imageName: "protoro-512")
+		self.protoroLayer.origin = Point(x: 300, y: 150)
 	}
 
 	override var representedObject: AnyObject? {
