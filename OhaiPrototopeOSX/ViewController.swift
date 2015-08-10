@@ -31,6 +31,8 @@ class ViewController: NSViewController {
 		
 		self.protoroLayer = Layer(parent: nil, imageName: "protoro-512")
 		self.protoroLayer.origin = Point(x: 300, y: 150)
+		
+		self.protoroLayer.animators.position.target = Point(x: 100, y: 100)
 	}
 
 	override var representedObject: AnyObject? {
