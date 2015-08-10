@@ -30,8 +30,6 @@
 		96A192791B531BAB00D73B07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A192781B531BAB00D73B07 /* ViewController.swift */; };
 		96A1927B1B531BAB00D73B07 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96A1927A1B531BAB00D73B07 /* Images.xcassets */; };
 		96A1927E1B531BAC00D73B07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96A1927C1B531BAC00D73B07 /* Main.storyboard */; };
-		96A1929F1B531BED00D73B07 /* PrototopeOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A1929A1B531BAC00D73B07 /* PrototopeOSX.framework */; };
-		96A192A01B531BED00D73B07 /* PrototopeOSX.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 96A1929A1B531BAC00D73B07 /* PrototopeOSX.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CD11D8651A817DDA004F1197 /* TouchParticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD11D8641A817DDA004F1197 /* TouchParticles.swift */; };
 		CD4C5E2A1AC5BC64002288EB /* ShapeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4C5E291AC5BC64002288EB /* ShapeScene.swift */; };
 		EB06C1021A853FC50095489F /* SceneListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB06C1011A853FC50095489F /* SceneListingViewController.swift */; };
@@ -159,7 +157,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				96A192A01B531BED00D73B07 /* PrototopeOSX.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,7 +220,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96A1929F1B531BED00D73B07 /* PrototopeOSX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,10 +400,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 96A1929D1B531BAC00D73B07 /* Build configuration list for PBXNativeTarget "OhaiPrototopeOSX" */;
 			buildPhases = (
+				96A192A31B531BED00D73B07 /* Embed Frameworks */,
 				96A1926E1B531BAB00D73B07 /* Sources */,
 				96A1926F1B531BAB00D73B07 /* Frameworks */,
 				96A192701B531BAB00D73B07 /* Resources */,
-				96A192A31B531BED00D73B07 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -833,16 +829,24 @@
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"pop/**",
+				);
 				INFOPLIST_FILE = OhaiPrototopeOSX/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_INCLUDE_PATHS = "${SRCROOT}/**";
 			};
 			name = Debug;
 		};
@@ -854,12 +858,20 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"pop/**",
+				);
 				INFOPLIST_FILE = OhaiPrototopeOSX/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_INCLUDE_PATHS = "${SRCROOT}/**";
 			};
 			name = Release;
 		};
