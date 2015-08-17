@@ -32,6 +32,8 @@
 		96A1927E1B531BAC00D73B07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96A1927C1B531BAC00D73B07 /* Main.storyboard */; };
 		96D40D211B795ABE003FE271 /* PrototopeOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A1929A1B531BAC00D73B07 /* PrototopeOSX.framework */; };
 		96D40D221B795ABE003FE271 /* PrototopeOSX.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 96A1929A1B531BAC00D73B07 /* PrototopeOSX.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		96D40D3A1B825D77003FE271 /* jeff.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9699331F1A895E980036684E /* jeff.mp4 */; };
+		96D40D3F1B826DBE003FE271 /* PrototopeRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D40D3E1B826DBE003FE271 /* PrototopeRootView.swift */; };
 		CD11D8651A817DDA004F1197 /* TouchParticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD11D8641A817DDA004F1197 /* TouchParticles.swift */; };
 		CD4C5E2A1AC5BC64002288EB /* ShapeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4C5E291AC5BC64002288EB /* ShapeScene.swift */; };
 		EB06C1021A853FC50095489F /* SceneListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB06C1011A853FC50095489F /* SceneListingViewController.swift */; };
@@ -202,6 +204,7 @@
 		96A192781B531BAB00D73B07 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		96A1927A1B531BAB00D73B07 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		96A1927D1B531BAC00D73B07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		96D40D3E1B826DBE003FE271 /* PrototopeRootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrototopeRootView.swift; sourceTree = "<group>"; };
 		CD11D8641A817DDA004F1197 /* TouchParticles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchParticles.swift; sourceTree = "<group>"; };
 		CD4C5E291AC5BC64002288EB /* ShapeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeScene.swift; sourceTree = "<group>"; };
 		EB06C1011A853FC50095489F /* SceneListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneListingViewController.swift; sourceTree = "<group>"; };
@@ -330,6 +333,7 @@
 				96A1927A1B531BAB00D73B07 /* Images.xcassets */,
 				96A1927C1B531BAC00D73B07 /* Main.storyboard */,
 				96A192741B531BAB00D73B07 /* Supporting Files */,
+				96D40D3E1B826DBE003FE271 /* PrototopeRootView.swift */,
 			);
 			path = OhaiPrototopeOSX;
 			sourceTree = "<group>";
@@ -579,6 +583,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96A1927B1B531BAB00D73B07 /* Images.xcassets in Resources */,
+				96D40D3A1B825D77003FE271 /* jeff.mp4 in Resources */,
 				96A1927E1B531BAC00D73B07 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -624,6 +629,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96A192791B531BAB00D73B07 /* ViewController.swift in Sources */,
+				96D40D3F1B826DBE003FE271 /* PrototopeRootView.swift in Sources */,
 				96A192771B531BAB00D73B07 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

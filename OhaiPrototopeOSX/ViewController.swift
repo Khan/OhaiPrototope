@@ -14,6 +14,7 @@ class ViewController: NSViewController {
 	var environment: Environment!
 	var layer: Layer!
 	var protoroLayer: Layer!
+	var heartbeat: Heartbeat!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -24,6 +25,8 @@ class ViewController: NSViewController {
 		self.environment = Environment.defaultEnvironmentWithRootView(self.view)
 		Environment.currentEnvironment = self.environment
 		
+		Layer.root.backgroundColor = Color(hex: 0xFFF5D9)
+		
 		self.layer = Layer(parent: nil, name: "My layer", viewClass: nil)
 		self.layer.size = Size(width: 200, height: 200)
 		self.layer.backgroundColor = Color.purple
@@ -33,6 +36,15 @@ class ViewController: NSViewController {
 		self.protoroLayer.origin = Point(x: 300, y: 150)
 		
 		self.protoroLayer.animators.position.target = Point(x: 100, y: 100)
+		
+//		self.heartbeat = Heartbeat() { _ in
+//			println("buh?")
+//		}
+		
+
+		
+
+
 	}
 
 	override var representedObject: AnyObject? {
