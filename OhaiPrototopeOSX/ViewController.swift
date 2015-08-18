@@ -22,6 +22,10 @@ class ViewController: NSViewController {
 		// Do any additional setup after loading the view.
 //		Speech.say("oh hi", rate: 200)
 		self.view.wantsLayer = true
+		afterDuration(1, { () -> Void in
+			
+			self.view.window?.acceptsMouseMovedEvents = true
+		})
 		self.environment = Environment.defaultEnvironmentWithRootView(self.view)
 		Environment.currentEnvironment = self.environment
 		
@@ -33,9 +37,14 @@ class ViewController: NSViewController {
 		self.layer.border = Border(color: Color.orange, width: 5)
 		
 		self.protoroLayer = Layer(parent: nil, imageName: "protoro-512")
-		self.protoroLayer.origin = Point(x: 300, y: 150)
+		self.protoroLayer.position = Point(x: 300, y: 150)
 		
-		self.protoroLayer.animators.position.target = Point(x: 100, y: 100)
+//		self.protoroLayer.animators.position.target = Point(x: 100, y: 100)
+		
+		Layer.root.mouseMovedHandler = { 
+			(event: InputEvent) in
+			self.protoroLayer.position = event.globalLocation
+		}
 		
 //		self.heartbeat = Heartbeat() { _ in
 //			println("buh?")
