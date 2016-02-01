@@ -55,7 +55,7 @@ class TouchAnimators {
         // this layer will also rotate 90 degrees to the right and recoil
         // from your touch for as long as you press down on it. Letting go
         // will return it to its original state
-        needyLayer = gimmeSquare(x:444)
+        needyLayer = gimmeSquare(444)
 
         // starting to touch it will rotate and scale it
         needyLayer.touchBeganHandler = { _ in

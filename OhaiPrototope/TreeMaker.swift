@@ -46,7 +46,7 @@ class TreeMaker {
 	}
 
 
-	func drawBranches(#parent: Layer, level: Int, radians: Double, position: Point, width: Double) {
+	func drawBranches(parent parent: Layer, level: Int, radians: Double, position: Point, width: Double) {
 		let lowerBranchLength = tunable(62, name: "Branch length - lower", min: 1, max: 100)
 		let upperBranchLength = tunable(3, name: "Branch length - upper", min: 1, max: 100)
 		let branchLengthRangeFactor = tunable(0.3, name: "Branch length - range factor", min: 0, max: 0.9)
@@ -84,7 +84,7 @@ class TreeMaker {
 		}
 	}
 
-	func drawLeaves(#parent: Layer, from: Point, to: Point) {
+	func drawLeaves(parent parent: Layer, from: Point, to: Point) {
 	let leavesPerBranchSegment = Int(tunable(10, name: "leaves per segment", min: 0, max: 25))
 
 		for leafIndex in 0..<leavesPerBranchSegment {
@@ -116,7 +116,7 @@ class TreeMaker {
 		}
 	}
 
-	func makeLeaf(#parent: Layer, point: Point) -> ShapeLayer {
+	func makeLeaf(parent parent: Layer, point: Point) -> ShapeLayer {
 		let flowerHue = tunable(0.32, name: "leaf hue", min: 0, max: 1)
 		let hueRange = 0.05
 		let flowerSaturation = tunable(0.46, name: "leaf saturation", min: 0, max: 1)

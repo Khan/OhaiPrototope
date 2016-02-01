@@ -20,7 +20,7 @@ class SceneViewController: UIViewController {
 		mainScene = scene.constructor()
 	}
 
-	required init(coder aDecoder: NSCoder) {
+	required init?(coder aDecoder: NSCoder) {
 		fatalError("init(coder:) has intentionally not been implemented")
 	}
 
@@ -41,9 +41,9 @@ class SceneViewController: UIViewController {
         return true
     }
 
-    override var keyCommands: [AnyObject]? {
+    override var keyCommands: [UIKeyCommand]? {
         get {
-            let escape = UIKeyCommand(input: UIKeyInputEscape, modifierFlags: nil, action: "handleKeyCommand:")
+            let escape = UIKeyCommand(input: UIKeyInputEscape, modifierFlags: [], action: "handleKeyCommand:")
             return [escape]
         }
     }

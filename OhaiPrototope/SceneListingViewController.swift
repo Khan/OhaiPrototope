@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SceneListingViewController: UITableViewController, UITableViewDelegate {
+class SceneListingViewController: UITableViewController {
 	private let dataSource: SceneListingDataSource
 	private var sceneActivationHandler: Scene -> ()
 
@@ -43,7 +43,7 @@ private class SceneListingDataSource: NSObject, UITableViewDataSource {
 		return 1
 	}
 	@objc private func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCellWithIdentifier("Scene", forIndexPath: indexPath) as! UITableViewCell
+		let cell = tableView.dequeueReusableCellWithIdentifier("Scene", forIndexPath: indexPath) 
 		cell.textLabel!.text = scenes[indexPath.row].name
 		return cell
 	}

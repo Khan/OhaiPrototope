@@ -70,6 +70,20 @@
 			remoteGlobalIDString = EBE3A75519DF79C400A77736;
 			remoteInfo = Prototope;
 		};
+		9620D4FE1C5EF821001E2A23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D7E00481A6239440059EC34 /* Prototope.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96A192331B531B3200D73B07;
+			remoteInfo = PrototopeOSX;
+		};
+		9620D5001C5EF821001E2A23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D7E00481A6239440059EC34 /* Prototope.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96A1923D1B531B3300D73B07;
+			remoteInfo = PrototopeOSXTests;
+		};
 		9632F65A1A8D4C6A003D386B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8D7E00481A6239440059EC34 /* Prototope.xcodeproj */;
@@ -255,6 +269,8 @@
 				9632F65D1A8D4C6A003D386B /* ProtocasterTests.xctest */,
 				9632F65F1A8D4C6A003D386B /* Protoscope.app */,
 				9632F6611A8D4C6A003D386B /* ProtoscopeTests.xctest */,
+				9620D4FF1C5EF821001E2A23 /* PrototopeOSX.framework */,
+				9620D5011C5EF821001E2A23 /* PrototopeOSXTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -330,6 +346,8 @@
 		8D7E001B1A6238A10059EC34 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Prototope Research Facility";
 				TargetAttributes = {
@@ -388,6 +406,20 @@
 			fileType = wrapper.cfbundle;
 			path = PrototopeTests.xctest;
 			remoteRef = 8D7E00531A6239440059EC34 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9620D4FF1C5EF821001E2A23 /* PrototopeOSX.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = PrototopeOSX.framework;
+			remoteRef = 9620D4FE1C5EF821001E2A23 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9620D5011C5EF821001E2A23 /* PrototopeOSXTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PrototopeOSXTests.xctest;
+			remoteRef = 9620D5001C5EF821001E2A23 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		9632F65B1A8D4C6A003D386B /* Protocaster.app */ = {

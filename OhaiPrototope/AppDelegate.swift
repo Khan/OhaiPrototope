@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		)
 		sceneListingViewController.title = "Prototypes"
 		navigationController = UINavigationController(rootViewController: sceneListingViewController)
-		navigationController.interactivePopGestureRecognizer.enabled = false
+		navigationController.interactivePopGestureRecognizer?.enabled = false
 		window.rootViewController = navigationController
 
 		let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "handleSwipeBackGesture:")
